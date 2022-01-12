@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(n){const t=n.extend("com.myorg.myapp.controller.App",{onInit:function n(){this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass())}});return t});

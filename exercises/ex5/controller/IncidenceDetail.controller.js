@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/core/routing/History","sap/ui/core/UIComponent"],function(o,e,n){const t=o.extend("com.myorg.myapp.controller.IncidenceDetail",{onNavButtonPress:function o(){const t=e.getInstance().getPreviousHash();if(t!==undefined){window.history.go(-1)}else{n.getRouterFor(this).navTo("main")}}});return t});

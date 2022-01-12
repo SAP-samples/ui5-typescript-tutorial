@@ -1,0 +1,30 @@
+<mvc:View
+	displayBlock="true"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:cc="com.myorg.myapp.control"
+	controllerName="com.myorg.myapp.controller.IncidenceDetail">
+	<Page
+		id="incidenceDetailPage"
+		title="{incidenceHistory>name}"
+		showNavButton="true"
+		navButtonPress=".onNavButtonPress">
+		<cc:LineChart
+				title="{incidenceHistory>name}"
+				color="red"
+				records="{incidenceHistory>history}">
+			<cc:ChartRecord
+				label='{
+					path: "incidenceHistory>date",
+					type: "sap.ui.model.type.DateTime",
+					formatOptions: {
+						style: "short",
+						source: {
+							pattern: "yyyy-MM-ddTHH:mm:ss.nnnZ"
+						}
+					}
+				}'
+				value ="{incidenceHistory>weekIncidence}"/>
+		</cc:LineChart>
+	</Page>
+</mvc:View>

@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/library","sap/ui/core/mvc/Controller"],function(r,n){const e=r["IconColor"];const o=n.extend("com.myorg.myapp.controller.Main",{formatIncidence:function r(n){return Math.round(n)},formatIconColor:function r(n){if(n<400){return e.Default}else if(n<800){return e.Critical}else{return e.Negative}}});return o});
