@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: [YOUR REPO NAME]
-Upstream-Contact: [YOUR EMAIL ADDRESS]
-Source: https://github.com/sap-samples/[YOUR REPO NAME]
+Upstream-Name: ui5-typescript-tutorial
+Upstream-Contact: OpenUI5 Team (openui5@sap.com)
+Source: https://github.com/SAP-samples/ui5-typescript-tutorial
 Disclaimer: The code in this project may include calls to APIs (“API Calls”) of
  SAP or third-party products or services developed outside of this project
  (“External Products”).
@@ -24,6 +24,10 @@ Disclaimer: The code in this project may include calls to APIs (“API Calls”)
  you any rights to use or access any SAP External Product, or provide any third
  parties the right to use of access any SAP External Product, through API Calls.
 
-Files: *
-Copyright: 2021 SAP SE or an SAP affiliate company and [YOUR REPO NAME] contributors
+Files: * 
+Copyright: 2022 SAP SE or an SAP affiliate company and ui5-typescript-tutorial contributors
 License: Apache-2.0
+
+Files: backup_data/* 
+Copyright: Marlon Lückert
+License: CC-BY-4.0
