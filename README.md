@@ -1,5 +1,8 @@
 # ui5-typescript-tutorial - Learn App Development in UI5 and TypeScript
 
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/ui5-typescript-tutorial)](https://api.reuse.software/info/github.com/SAP-samples/ui5-typescript-tutorial)
+
+
 ## Overview
 
 This brief ~1-hour tutorial introduces developers to UI5 application development in TypeScript. It includes creating a basic application from the TypeScript template using the ["easy-UI5"](https://github.com/SAP/generator-easy-ui5) generator, TypeScript coding in regular UI controllers, as well as advanced topics like custom control development and using third-party libraries.
