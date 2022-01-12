@@ -1,4 +1,4 @@
-# ui5-typescript-tutorial - learn app development in UI5 and TypeScript hands-on
+# ui5-typescript-tutorial - Learn App Development in UI5 and TypeScript
 ## Description
 
 [In the `main` branch, this repository](https://github.com/SAP-samples/ui5-typescript-tutorial/blob/main/README.md) contains the instructions for the ui5-typescript-tutorial.
