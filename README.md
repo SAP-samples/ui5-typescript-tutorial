@@ -1,19 +1,15 @@
-# ui5-typescript-tutorial - Learn App Development in UI5 and TypeScript Hands-on
-
-## Description
-
-This repository contains the instructions for the ui5-typescript-tutorial.
+# ui5-typescript-tutorial - Learn App Development in UI5 and TypeScript
 
 ## Overview
 
-This brief tutorial (~1-2 hours) introduces developers to UI5 application development in TypeScript. This includes creating a basic application from the TypeScript template using the ["easy-UI5"](https://github.com/SAP/generator-easy-ui5) generator, TypeScript coding in regular UI controllers, as well as advanced topics like custom control development and using third-party libraries.
+This brief ~1-hour tutorial introduces developers to UI5 application development in TypeScript. It includes creating a basic application from the TypeScript template using the ["easy-UI5"](https://github.com/SAP/generator-easy-ui5) generator, TypeScript coding in regular UI controllers, as well as advanced topics like custom control development and using third-party libraries.
 
 ## Requirements
 
 The technical requirements to follow the tutorial are:
 
 * A current version of [Node.js](https://nodejs.org/)
-* A code editor supporting TypeScript development (preferably the free [Microsoft Visual Studio Code](https://code.visualstudio.com/), which was used to create the tutorial.
+* A code editor supporting TypeScript development (preferably the free [Microsoft Visual Studio Code](https://code.visualstudio.com/), which was used to create the tutorial).
 
 Required knowledge:
 

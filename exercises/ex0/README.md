@@ -1,4 +1,4 @@
-# Prerequisites
+# Exercise 0 - Getting Started
 
 To get started, you need to ensure that you have a recent Node.js version 12 or higher installed on your machine.
 
