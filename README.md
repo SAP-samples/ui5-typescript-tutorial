@@ -5,26 +5,26 @@
 
 ## Overview
 
-This brief ~1-hour tutorial introduces developers to UI5 application development in TypeScript. It includes creating a basic application from the TypeScript template using the ["easy-UI5"](https://github.com/SAP/generator-easy-ui5) generator, TypeScript coding in regular UI controllers, as well as advanced topics like custom control development and using third-party libraries.
+This brief ~1-hour tutorial introduces developers to UI5 application development *in TypeScript*. It includes creating a basic application from the TypeScript template using the ["easy-UI5"](https://github.com/SAP/generator-easy-ui5) generator, TypeScript coding in regular UI controllers, as well as advanced topics like custom control development and using third-party libraries.
 
 ## Requirements
 
 The technical requirements to follow the tutorial are:
 
 * A current version of [Node.js](https://nodejs.org/)
-* A code editor supporting TypeScript development (preferably the free [Microsoft Visual Studio Code](https://code.visualstudio.com/), which was used to create the tutorial).
+* A code editor supporting TypeScript development (preferably the free [Microsoft Visual Studio Code](https://code.visualstudio.com/), which was used to create the tutorial)
 
 Required knowledge:
 
 * You should have basic Javascript knowledge to avoid blind copy&paste without knowing what's going on
-* Basic UI5 knowledge is beneficial (but not required)
+* Basic UI5 knowledge is beneficial, as this tutorial focuses on the TypeScript side of things.
 * TypeScript knowledge is not required. If interested, having a quick look e.g. at [this brief TypeScript intro for JavaScript developers](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html) might let you know what to expect.
 
 ## Exercises
 
 The tutorial consists of the following exercises. To start, just [open the first link](exercises/ex0/) - you will be guided from there.
 
-From the following list, you can not only access each exercise directly, but also also browse the resulting sources and run the resulting app:
+From the list, you can not only access each exercise directly, but also also browse the resulting sources and run the resulting app:
 * [Exercise 0 - Getting Started](exercises/ex0/)
 * [Exercise 1 - Create And Run Your Application](exercises/ex1/) (*[browse sources](exercises/ex1/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex1/)*)
 * [Exercise 2 - Create the Initial User Interface and set up Routing](exercises/ex2/) (*[browse sources](exercises/ex2/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex2/)*)
@@ -38,7 +38,7 @@ From the following list, you can not only access each exercise directly, but als
 
 If you want to download the code for all the exercises, you can either [download the entire repository as zip file](https://github.com/SAP-samples/ui5-typescript-tutorial/archive/refs/heads/main.zip) and find the content in there below "ui5-typescript-tutorial-main/exercises/ex1/com.myorg.myapp" etc., or you can clone the repository using git.<br>
 
-The resulting app after each exercise can also be [run from here](https://sap-samples.github.io/ui5-typescript-tutorial).
+The resulting app after each exercise can also be [run from this page](https://sap-samples.github.io/ui5-typescript-tutorial). It includes additional links to unoptimized versions of the app, which can be used to debug the original TypeScript sources.
 
 ## High-Level Application Idea
 
