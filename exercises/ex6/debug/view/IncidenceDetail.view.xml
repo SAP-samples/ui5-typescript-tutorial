@@ -1,0 +1,12 @@
+<mvc:View
+	displayBlock="true"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.myorg.myapp.controller.IncidenceDetail">
+	<Page
+		id="incidenceDetailPage"
+		title="{incidenceHistory>name}"
+		showNavButton="true"
+		navButtonPress=".onNavButtonPress">
+	</Page>
+</mvc:View>
