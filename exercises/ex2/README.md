@@ -6,8 +6,9 @@ In this exercise, you will load live data and display first parts of it: the sta
 
 After completing this section, you will have a basic understanding of how UI5 application code looks different due to TypeScript and due to the modern JavaScript syntax which we suggest to use in TypeScript applications.
 
-1.  Open the file `src/Component.ts` and look at the overall file structure.<br>
-It starts with two `import` statements and a class definition:
+1.  Open the file `src/Component.ts` in a TypeScript-aware code editor of your choice (e.g. Visual Studio Code).
+
+	Now look at the overall file structure. It starts with two `import` statements and a class definition:
 
 	```ts
 	import UIComponent from "sap/ui/core/UIComponent";

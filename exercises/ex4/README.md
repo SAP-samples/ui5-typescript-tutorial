@@ -1,4 +1,4 @@
-# Exercise 4 - Enhance the User Interface and Create a Controller
+# Exercise 4 - Enhance the User Interface and Use Formatters
 
 In this exercise, you will enhance the user interface to display data and add formatter functions to the controller.
 

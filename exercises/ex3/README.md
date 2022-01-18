@@ -31,4 +31,4 @@ To launch the application in a different language to test these changes, you can
 
 You've now provided all needed UI texts in two languages and the base "developer language".
 
-Continue to - [Exercise 4 - Enhance the User Interface and Create a Controller](../ex4/README.md)
+Continue to - [Exercise 4 - Enhance the User Interface and Use Formatters](../ex4/README.md)
