@@ -11,7 +11,7 @@ The main link opens the partially optimized build result where TypeScript source
 - [Exercise 1 - Create And Run Your Application](exercises/ex1/) ([debug version](exercises/ex1/debug/))
 - [Exercise 2 - Create the Initial User Interface and set up Routing](exercises/ex2/) ([debug version](exercises/ex2/debug/))
 - [Exercise 3 - Add Translated UI Texts](exercises/ex3/) ([debug version](exercises/ex3/debug/))
-- [Exercise 4 - Enhance the User Interface and Create a Controller](exercises/ex4/) ([debug version](exercises/ex4/debug/))
+- [Exercise 4 - Enhance the User Interface and Use Formatters](exercises/ex4/) ([debug version](exercises/ex4/debug/))
 - [Exercise 5 - Create a Second View](exercises/ex5/) ([debug version](exercises/ex5/debug/))
 - [Exercise 6 - Load Incidence History Data](exercises/ex6/) ([debug version](exercises/ex6/debug/))
 - [Exercise 7 - Create and Use a Custom Control](exercises/ex7/) ([debug version](exercises/ex7/debug/))
