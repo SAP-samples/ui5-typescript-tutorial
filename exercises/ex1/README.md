@@ -36,7 +36,11 @@ After answering all questions (just press `Enter` to confirm the defaults), Yeom
 
 ## Exercise 1.2 - Open Your Application
 
-Switch into new folder `com.myorg.myapp` and open the editor of your choice (e.g. [Visual Studio Code](https://code.visualstudio.com/)). In the project root of the UI5 TypeScript application you will find the `package.json` and `ui5.yaml` which indicate that this is a UI5 application project. Compared to the classic UI5 application projects, the characteristic of the UI5 TypeScript application project is that the sources can be found in the `src` folder instead of the `webapp` folder. Instead of a `Component.js` you will find a `Component.ts` next to the manifest:
+Switch into new folder `com.myorg.myapp` and open the editor of your choice (e.g. [Visual Studio Code](https://code.visualstudio.com/)).
+
+> **REMARK**: make sure to open the folder `com.myorg.myapp` in the editor, not the folder above! Otherwise there may be errors indicating that `tsconfig.json` was not found!
+
+In the project root of the UI5 TypeScript application you will find the `package.json` and `ui5.yaml` which indicate that this is a UI5 application project. Compared to the classic UI5 application projects, the characteristic of the UI5 TypeScript application project is that the sources can be found in the `src` folder instead of the `webapp` folder. Instead of a `Component.js` you will find a `Component.ts` next to the manifest:
 
 ```sh
 project-root

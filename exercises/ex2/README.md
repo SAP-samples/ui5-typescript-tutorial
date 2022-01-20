@@ -45,6 +45,8 @@ After completing this section, you will have a basic understanding of how UI5 ap
 
 After completing this step, the data will be loaded. This is the first step where you actually write code. It will hence provide another glimpse of the benefits TypeScript provides.
 
+> **REMARK**: whenever you completed a step in this tutorial and the result does not show up in the browser as expected, make sure you saved all changes! This sounds trivial, but is actually the most frequent cause for issues.
+
 1.	In the file `src/Component.ts`, find the `public init() : void {...` method and insert the following lines after the `super.init();` call. To experience how code completion works and makes development more efficient, we recommend that you type this block of code manually as described below and keep an eye on the suggestions provided by your IDE!
 
 	```js
@@ -172,8 +174,9 @@ After completing these steps, the main view will display a grid list of states i
 	"sap.f": {},
 	```
 
+5.	Even if you have `npm start` still active, which means the UI5 tools run in watch mode, reloading the browser on every code change, these changes to the UI5 project configuration (adding the sap.f library) require a full restart. Hence please stop the `npm start` process in case it is still running and launch it again.
 
-The app now will display a grid list with the states of Germany (use `npm start` again if you stopped it).
+The app now will display a grid list with the states of Germany.
 
 <img src="images/states.png" width="810">
 

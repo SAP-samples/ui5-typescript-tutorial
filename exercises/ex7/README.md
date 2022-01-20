@@ -10,6 +10,8 @@ After completing these steps you will have created a custom Control (which will 
 
 1. Inside `src`, next to the `controller` directory, create a new directory named `control`.
 
+	> **REMARK**: make sure to create this directory in the correct location, as direct child of `src`! Otherwise the second page of the app will no longer show up and the browser console will display a failed attempt to load `com/myorg/myapp/control/LineChart.js`!
+
 2. Inside this new `control` directory, create a new file named `ChartRecord.ts` with the following content.<br>
 It implements an element with the properties `label` and `value`.
 	> **Remark:** `sap.ui.core.Element` is a base class of `sap.ui.core.Control` and is typically used for data binding when there is no need to produce HTML (because this can be done by the parent control). Hence, in most cases, elements do not have a renderer, and that's the main difference to a regular control.
