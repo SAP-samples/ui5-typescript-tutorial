@@ -23,6 +23,17 @@ Now Yeoman will ask you several questions necessary to create your application:
 
 After answering all questions (just press `Enter` to confirm the defaults), Yeoman runs `npm install` in the application directory. Once completed you can switch into the directory `com.myorg.myapp`.
 
+> `yo easy-ui5 ts-app` may cause an error to download and install the `ts-app` template on Macs. In this case, a similar error like this can appear:
+>
+> ```sh
+> Error: EACCES: permission denied, mkdir '/path/to/project/ProjectName'
+> at Error (native)
+> at Object.fs.mkdirSync (fs.js:799:18)
+> ...
+> ```
+>
+> The issue appears as your global `node_modules` folder is located in your `usr/local/lib` folder for which owner permissions are needed to create/modify/delete files or folders. To overcome this issue run `chmod ugo+rwx /usr/local/lib/node_modules/generator-easy-ui5/plugin-generators` to ensure write permissions are granted.
+
 > `npm install` may cause an error in finding dependencies. In this case, a similar error like this can appear:
 >
 > ```sh
