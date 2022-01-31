@@ -143,7 +143,7 @@ To use this tool:
 
 	This starts the interface generator tool in "watch" mode and creates the required interface definitions after a short startup delay during which all existing types in the project and in UI5 are scanned.
 
-	You can inspect the generated files [`src/control/LineChart.generated.tsinterface.ts`](com.myorg.myapp/src/control/LineChart.generated.tsinterface.ts) and [`src/control/ChartRecord.generated.tsinterface.ts`](com.myorg.myapp/src/control/ChartRecord.generated.tsinterface.ts) next to the custom control implementation. They define an interface with the same name as the control class and declare the same module name. This causes TypeScript to merge the definitions and to assume that the interface methods exist in the class. 
+	You can inspect the generated files [`src/control/LineChart.gen.d.ts`](com.myorg.myapp/src/control/LineChart.gen.d.ts) and [`src/control/ChartRecord.gen.d.ts`](com.myorg.myapp/src/control/ChartRecord.gen.d.ts) next to the custom control implementation. They define an interface with the same name as the control class and declare the same module name. This causes TypeScript to merge the definitions and to assume that the interface methods exist in the class. 
 
 	As a result, the TypeScript error messages are gone and code completion is also available for all control API methods.
 
