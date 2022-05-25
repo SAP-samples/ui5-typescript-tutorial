@@ -78,6 +78,27 @@ npm install chart.js --save-dev
 
 Now you can verify whether the custom middleware works fine or not by running the development server with `npm start` and trying to open the Chart.js file from [http://localhost:8080/resources/chart.js.js](http://localhost:8080/resources/chart.js.js)
 
+As `chart.js` includes its type definitions and as it's a standard node module, you now need to add the property `moduleResolution: "node"` to your `tsconfig.json`:
+
+```json
+{
+    "compilerOptions": {
+    [...]
+        "moduleResolution": "node",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./node_modules/@openui5/ts-types-esm"
+        ],
+    [...]
+    }
+}
+```
+
+This propery ensures that the TypeScript engine knows that types are available in the specified `typeRoots` and also in each node module.
+
+> **Remark:**
+> After adding this property to the `tsconfig.json` it may be necessary to restart your VSCode to resolve the type definitions properly.
+
 ## Exercise 8.3 - Adding Chart.js to the LineChart
 
 Open the file `src/control/LineChart.ts` and import the `Chart` from `chart.js` by just entering `import Cha` + trigger code completion and you get the suggestion for the `Chart` from `chart.js`:
