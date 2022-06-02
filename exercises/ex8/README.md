@@ -31,7 +31,7 @@ Afterwards, you need to enhance the `package.json` of your project and add the `
   […]
   "devDependencies": {
     […]
-    "ui5-tooling-modules": "^0.1.1"
+    "ui5-tooling-modules": "^0.3.2"
   },
   "ui5": {
     "dependencies": [
@@ -76,20 +76,36 @@ Instead of displaying the incidence data in a list, we want to display it in a `
 npm install chart.js --save-dev
 ```
 
-To get code completion support for Chart.js, you can install the type definitions from [DefinitelyTyped](https://www.npmjs.com/package/@types/chart.js):
+Now you can verify whether the custom middleware works fine or not by running the development server with `npm start` and trying to open the Chart.js file from [http://localhost:8080/resources/chart.js.js](http://localhost:8080/resources/chart.js.js)
 
-```sh
-npm install @types/chart.js --save-dev
+As `chart.js` includes its type definitions and as it's a standard node module, you now need to add the property `moduleResolution: "node"` to your `tsconfig.json`:
+
+```json
+{
+    "compilerOptions": {
+    [...]
+        "moduleResolution": "node",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./node_modules/@openui5/ts-types-esm"
+        ],
+    [...]
+    }
+}
 ```
 
-Now you can verify whether the custom middleware works fine or not by running the development server with `npm start` and trying to open the Chart.js file from [http://localhost:8080/resources/chart.js.js](http://localhost:8080/resources/chart.js.js)
+This ensures that the TypeScript engine knows that types are available in the specified `typeRoots` and also in each node module.
+
+> **Remark:**
+> After adding this property to the `tsconfig.json` it may be necessary to restart your VSCode to resolve the type definitions properly.
 
 ## Exercise 8.3 - Adding Chart.js to the LineChart
 
 Open the file `src/control/LineChart.ts` and import the `Chart` from `chart.js` by just entering `import Cha` + trigger code completion and you get the suggestion for the `Chart` from `chart.js`:
 
 ```ts
-import { Chart } from "chart.js";
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
 ```
 
 ![Import Chart.js](images/import_chart.png)

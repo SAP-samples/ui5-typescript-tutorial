@@ -1,6 +1,7 @@
 import Control from "sap/ui/core/Control";
 import RenderManager from "sap/ui/core/RenderManager";
-import { Chart } from "chart.js";
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
 
 /**
 * @name com.myorg.myapp.control.LineChart
