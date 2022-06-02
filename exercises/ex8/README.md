@@ -94,7 +94,7 @@ As `chart.js` includes its type definitions and as it's a standard node module, 
 }
 ```
 
-This propery ensures that the TypeScript engine knows that types are available in the specified `typeRoots` and also in each node module.
+This ensures that the TypeScript engine knows that types are available in the specified `typeRoots` and also in each node module.
 
 > **Remark:**
 > After adding this property to the `tsconfig.json` it may be necessary to restart your VSCode to resolve the type definitions properly.
