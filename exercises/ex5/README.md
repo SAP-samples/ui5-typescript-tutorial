@@ -72,43 +72,28 @@ In this exercise, you will create a second view for incidence history details an
 			id="incidenceDetailPage"
 			title="tbd"
 			showNavButton="true"
-			navButtonPress=".onNavButtonPress">
+			navButtonPress=".onNavBack">
 		</Page>
 	</mvc:View>
 	```
 
-	This view consists of an empty `sap.m.Page` control where the "Back"/"Nav" button is shown and triggers a method in the `com.myorg.myapp.controller.IncidenceDetail` controller (which will be created in the next step). The page title will be set in a later exercise, once data is loaded for this view.
+	This view consists of an empty `sap.m.Page` control where the "Back"/"Nav" button is shown and triggers a method in the template's `BaseController` (from which the `com.myorg.myapp.controller.IncidenceDetail` controller created in the next step will inherit). 
+	This `onNavBack` method will navigate back to the main page. Either by using the browser's own history API or by explicitly navigating to the main view, when the user has arrived directly at the detail page (e.g. using a bookmark that includes the URL hash for the detail page).
 
-4.  In the `src/controller` directory, add a new file named `IncidenceDetail.controller.ts` with the following content:
+	The page title is only temporary and will be set in a later exercise, once data is loaded for this view.
+
+4.  In the `src/controller` directory, add a new file named `IncidenceDetail.controller.ts` with the following content (functionality will be added later):
 
 	```ts
-	import Controller from "sap/ui/core/mvc/Controller";
-	import History from "sap/ui/core/routing/History";
-	import UIComponent from "sap/ui/core/UIComponent";
+	import BaseController from "./BaseController";
 
 	/**
-	 * @name com.myorg.myapp.controller.IncidenceDetail
-	 */
-	export default class IncidenceDetail extends Controller {
+	* @name com.myorg.myapp.controller.IncidenceDetail
+	*/
+	export default class IncidenceDetail extends BaseController {
 
-		onNavButtonPress() {
-			const previousHash = History.getInstance().getPreviousHash();
-			if (previousHash !== undefined) { // check needs to be like this (!==) because we want to go into this branch when hash is ""
-				window.history.go(-1);
-			} else { // when user launched the detail page directly, so there is no previous page in this app's history, then explicitly go to the main page
-				UIComponent.getRouterFor(this).navTo("main");
-			}
-		}
 	}
 	```
-
-	> **Remark:** in case you type the code by hand, make sure to import `sap/ui/core/routing/History`, not `sap/ui/core/History`.<br><br>
-	As JSDoc comment, `@name` is used here, giving the full name of the controller. In the controllers generated from the template it was just the `@namespace` without the controller's own name. Both options are equally valid.
-
-	This `onNavButtonPress` method is triggered by the "Back" button and will navigate back to the main page. Either by using the browser's own history API or by explicitly navigating to the main view, when the user has arrived directly at the detail page (e.g. using a bookmark that includes the URL hash for the detail page).
-
-	The `window` type is automatically known to TypeScript - like the entire DOM API - so you get code completion and type checks for calling `history.go(-1)`.
-
 
 5.  In `src/view/Main.view.xml`, add the attribute `press=".navToIncidenceDetail"` to the `<CustomListItem...` tag to trigger navigation. As result, the line should look like this:
 
@@ -117,12 +102,12 @@ In this exercise, you will create a second view for incidence history details an
 	```
 
 
-6.  In the file `src/controller/Main.controller.ts`, add the following method. This code gets the ID of the selected state from the binding context of the selected item. In the last code line, you can see how this ID is passed into the router, so it a) becomes part of the URL hash and b) can be read in the detail page.
+6.  In the file `src/controller/Main.controller.ts`, add the following method. This code gets the ID of the selected state from the binding context of the selected item. In the last code line, you can see how this ID is passed into the router (using a helper method inherited from the `BaseController`), so it a) becomes part of the URL hash and b) can be accessed in the detail page controller.
 
 	```js
 		navToIncidenceDetail(event: Event) {
 			const stateId = (event.getSource() as Control).getBindingContext().getProperty("abbreviation") as string;
-			UIComponent.getRouterFor(this).navTo("IncidenceDetailRoute", { id: stateId });
+			this.navTo("IncidenceDetailRoute", { id: stateId });
 		}
 	```
 
@@ -134,12 +119,12 @@ In this exercise, you will create a second view for incidence history details an
 
 		Another typecast to `string` is applied at the end of the line because TypeScript does not know the model data structure. 
 
-	2. Importing the `Control` and `UIComponent` classes is possible using the "Quick Fix..." in the error popup, as shown in previous exercises. But after doing so, there is still an error for event.getSource().
-	<img src="images/getsource_error.png" width="1140">
+	2. Importing the `Control` class is possible using the "Quick Fix..." in the error popup, as shown in previous exercises. But after doing so, there is still an error for event.getSource().
+	<img src="images/getsource_error.png" width="1283">
 
 	At first glance, it's not clear what the problem is. After all, the UI5 "Event" class [does have a "getSource()" method](https://ui5.sap.com/#/api/sap.ui.base.Event%23methods/getSource). Or doesn't it?<br>
 	Let's hover with the mouse over the "Event" type specified for the method parameter and you'll understand: TypeScript apparently thinks `Event` refers to the browser DOM event!
-	<img src="images/dom_event.png" width="1060">
+	<img src="images/dom_event.png" width="1280">
 
 	As seen with the `window` object above, knowledge about the DOM `Event` type is built-in to TypeScript (note: there is no import for the "Event" type so far!). Due to the name equality, TypeScript assumes the DOM Event class is meant. This is something to keep in mind when dealing with types which have very generic and common names.<br>
 	You can simply override by explicitly importing the UI5 Event class. Add the following line to the beginning of the file to get rid of the error:

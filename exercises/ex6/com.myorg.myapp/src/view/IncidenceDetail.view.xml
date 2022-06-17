@@ -7,6 +7,6 @@
 		id="incidenceDetailPage"
 		title="{incidenceHistory>name}"
 		showNavButton="true"
-		navButtonPress=".onNavButtonPress">
+		navButtonPress=".onNavBack">
 	</Page>
 </mvc:View>

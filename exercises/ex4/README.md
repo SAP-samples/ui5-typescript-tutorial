@@ -14,9 +14,9 @@ After completing these steps, you will have added two formatters to the controll
 		}
 
 		formatIconColor(incidence: number) {
-			if (incidence < 400) {
+			if (incidence < 300) {
 				return IconColor.Default;
-			} else if (incidence < 800) {
+			} else if (incidence < 500) {
 				return IconColor.Critical;
 			} else {
 				return IconColor.Negative;
@@ -86,6 +86,6 @@ When you look at the running app now, the icons are colored depending on the loc
 You've now extended the view and added formatters to the controller which are used for formatting the number and defining the icon color.
 
 ![](images/colored_incidencelist.png)
-> **Remark**: this screenshot is not being adapted to current incidences and coloring thresholds.
+> **Remark**: this screenshot is not adapted to current incidences and coloring thresholds.
 
 Continue to - [Exercise 5 - Create a Second View](../ex5/README.md)

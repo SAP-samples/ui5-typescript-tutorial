@@ -1,10 +1,10 @@
 import MessageBox from "sap/m/MessageBox";
-import Controller from "sap/ui/core/mvc/Controller";
+import BaseController from "./BaseController";
 
 /**
  * @namespace com.myorg.myapp.controller
  */
-export default class Main extends Controller {
+export default class Main extends BaseController {
 
 	public sayHello() : void {
 		MessageBox.show("Hello World!");

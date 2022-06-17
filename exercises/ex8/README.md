@@ -76,39 +76,20 @@ Instead of displaying the incidence data in a list, we want to display it in a `
 npm install chart.js --save-dev
 ```
 
-Now you can verify whether the custom middleware works fine or not by running the development server with `npm start` and trying to open the Chart.js file from [http://localhost:8080/resources/chart.js.js](http://localhost:8080/resources/chart.js.js)
-
-As `chart.js` includes its type definitions and as it's a standard node module, you now need to add the property `moduleResolution: "node"` to your `tsconfig.json`:
-
-```json
-{
-    "compilerOptions": {
-    [...]
-        "moduleResolution": "node",
-        "typeRoots": [
-            "./node_modules/@types",
-            "./node_modules/@openui5/ts-types-esm"
-        ],
-    [...]
-    }
-}
-```
-
-This ensures that the TypeScript engine knows that types are available in the specified `typeRoots` and also in each node module.
+Now you can verify whether the custom middleware works fine or not by running the development server with `npm start` (re-start it, if it was already running before the above changes) and trying to open the Chart.js file from [http://localhost:8080/resources/chart.js.js](http://localhost:8080/resources/chart.js.js)
 
 > **Remark:**
-> After adding this property to the `tsconfig.json` it may be necessary to restart your VSCode to resolve the type definitions properly.
+> To make TypeScript look for type definitions also in node modules (`chart.js` is such a module coming with its type definitions), `"moduleResolution": "Node"` must be set in `tsconfig.json`. However, this setting is already present in the app template, so you don't need to do it.
 
 ## Exercise 8.3 - Adding Chart.js to the LineChart
 
-Open the file `src/control/LineChart.ts` and import the `Chart` from `chart.js` by just entering `import Cha` + trigger code completion and you get the suggestion for the `Chart` from `chart.js`:
+Open the file `src/control/LineChart.ts` and import `Chart` from `chart.js` (the "/auto" part is [a special thing provided by that library](https://www.chartjs.org/docs/latest/getting-started/integration.html)):
 
 ```ts
-import { Chart, registerables } from 'chart.js';
-Chart.register(...registerables);
+import Chart from 'chart.js/auto';
 ```
 
-![Import Chart.js](images/import_chart.png)
+<!-- ![Import Chart.js](images/import_chart.png) -->
 
 The `Chart` base class is now available in your `LineChart` and we can start to add the logic. First, we add a member variable for the chart instance inside the class body:
 
@@ -158,9 +139,11 @@ As result, the renderer should look like this:
 			rm.openStart("div", chart);
 			rm.style("padding", "2em");
 			rm.openEnd();
+
 			rm.openStart("canvas", chart.getId() + "-canvas");
 			rm.openEnd();
 			rm.close("canvas");
+
 			rm.close("div");
 		}
 	}
@@ -187,12 +170,12 @@ So add this method to the class body:
 	}
 ```
 
-From TypeScript perspective, the code above requires to cast the return value of `this.getDomRef("canvas")`: it has type `Element` but `Chart.js` requires a `HTMLCanvasElement`.
+From TypeScript perspective, the code above requires to cast the return value of `this.getDomRef("canvas")`: it has type `Element` (this time the real DOM `Eleement`, not the UI5 one!) but `Chart.js` requires a more specific `HTMLCanvasElement`.
 
 > **Remark:**
 > For all JS libraries requiring DOM elements, it is a best practice to use a `Control` wrapper which allows to hook into the rendering lifecycle. The `renderer` should always use at least `apiVersion: 2` to ensure that in case of Control invalidation (e.g. via property changes) the DOM will be patched instead of replaced. This ensures that the DOM references will be kept stable. In general, JS libraries relying on references to DOM elements should be initialized in the `onAfterRendering` callback. At that point of time the DOM elements of the `Control` can be accessed via `this.getDomRef()`. Nested DOM elements which should be accessed should make use of id suffixes like shown above.
 
-Now, the details page will display a line chart for the incidence data of the selected state. The detail page of your application should look like this:
+Now, the detail page will display a line chart for the incidence data of the selected state. The detail page of your application should look like this:
 
 ![Chart.js](images/detail_chart.png)
 

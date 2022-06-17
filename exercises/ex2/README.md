@@ -119,7 +119,7 @@ After completing these steps, the main view will display a grid list of states i
 		</Page>
 	```
 
-2.	To the list of attributes for the opening tag, add the following two:
+2.	To the list of attributes for the opening `<mvc:View...` tag, add the following two:
 	```xml
 		xmlns:f="sap.f"
 		xmlns:grid="sap.ui.layout.cssgrid"

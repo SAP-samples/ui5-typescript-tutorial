@@ -12,6 +12,7 @@
         "rootDir": "./src",
         "outDir": "./dist",
         "baseUrl": "./",
+        "moduleResolution": "node",
         "typeRoots": [
             "./node_modules/@types",
             "./node_modules/@openui5/ts-types-esm"

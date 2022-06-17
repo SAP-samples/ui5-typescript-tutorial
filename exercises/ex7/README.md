@@ -101,7 +101,7 @@ After completing this step, the new control will list the incidence history valu
 			id="incidenceDetailPage"
 			title="{incidenceHistory>name}"
 			showNavButton="true"
-			navButtonPress=".onNavButtonPress">
+			navButtonPress=".onNavBack">
 			<cc:LineChart
 					title="{incidenceHistory>name}"
 					color="red"
@@ -141,7 +141,7 @@ To use this tool:
 	npx @ui5/ts-interface-generator --watch
 	```
 
-	This starts the interface generator tool in "watch" mode and creates the required interface definitions after a short startup delay during which all existing types in the project and in UI5 are scanned.
+	This starts the interface generator tool in "watch" mode and creates the required interface definitions (after a short startup delay during which all existing types in the project and in UI5 are scanned).
 
 	You can inspect the generated files [`src/control/LineChart.gen.d.ts`](com.myorg.myapp/src/control/LineChart.gen.d.ts) and [`src/control/ChartRecord.gen.d.ts`](com.myorg.myapp/src/control/ChartRecord.gen.d.ts) next to the custom control implementation. They define an interface with the same name as the control class and declare the same module name. This causes TypeScript to merge the definitions and to assume that the interface methods exist in the class. 
 

@@ -1,5 +1,7 @@
 import { CSSColor } from "sap/ui/core/library";
 import ChartRecord from "com/myorg/myapp/control/ChartRecord";
+import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
+import { AggregationBindingInfo } from "sap/ui/base/ManagedObject";
 import { $ControlSettings } from "sap/ui/core/Control";
 
 declare module "./LineChart" {
@@ -8,9 +10,9 @@ declare module "./LineChart" {
      * Interface defining the settings object used in constructor calls
      */
     interface $LineChartSettings extends $ControlSettings {
-        title?: string;
-        color?: CSSColor;
-        records?: ChartRecord[] | ChartRecord;
+        title?: string | PropertyBindingInfo;
+        color?: CSSColor | PropertyBindingInfo | `{${string}}`;
+        records?: ChartRecord[] | ChartRecord | AggregationBindingInfo | `{${string}}`;
     }
 
     export default interface LineChart {

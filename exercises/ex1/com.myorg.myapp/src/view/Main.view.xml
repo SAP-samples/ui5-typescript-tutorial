@@ -5,14 +5,14 @@
 	xmlns:mvc="sap.ui.core.mvc">
 
 	<MessagePage
-		title="{i18n>app_title}"
-		text="{i18n>app_title}"
+		title="{i18n>appTitle}"
+		text="{i18n>appTitle}"
 		icon="sap-icon://accept"
 		id="page"
-		description="{i18n>app_description}">
+		description="{i18n>appDescription}">
 		<buttons>
 			<Button
-				text="{i18n>btn_text}"
+				text="{i18n>btnText}"
 				press="sayHello" />
 		</buttons>
 	</MessagePage>

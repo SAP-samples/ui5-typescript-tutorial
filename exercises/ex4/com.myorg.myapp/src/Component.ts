@@ -18,11 +18,11 @@ export default class Component extends UIComponent {
 		// call the base component's init function
 		super.init();
 
-		// create the views based on the url/hash
-		this.getRouter().initialize();
-
 		const model = new JSONModel("https://api.corona-zahlen.org/states");
 		this.setModel(model);
+
+		// create the views based on the url/hash
+		this.getRouter().initialize();
 	}
 
 	/**

@@ -10,7 +10,7 @@ After having a proper [Node.js](https://nodejs.org/) version installed, the next
 npm install -g yo generator-easy-ui5
 ```
 
-Please verify your installation to see if Yeoman has been installed correctly and the Easy UI5 Generator is avaiable by executing the following command in your console:
+Please verify your installation to see if Yeoman has been installed correctly and the Easy UI5 Generator is available by executing the following command in your console:
 
 ```sh
 yo --generators
@@ -27,7 +27,7 @@ npm info generator-easy-ui5 version
 The version should be at least **```3.1.5```** to be able to consume the latest templates from the UI5 community GitHub organization listed [here](https://github.com/search?q=topic%3Aeasy-ui5+org%3Aui5-community&type=Repositories).
 
 > **Remark:**
-> For the tutorial we used the Easy UI5 Generator 3.1.5. You can also explicitely install this version via `npm install -g easy-ui5-generator@3.1.5`.
+> For the tutorial we used the Easy UI5 Generator 3.3.0. You can also explicitely install this version via `npm install -g easy-ui5-generator@3.3.0`.
 
 ## Summary
 
