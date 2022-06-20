@@ -95,6 +95,8 @@ In this exercise, you will create a second view for incidence history details an
 	}
 	```
 
+	The JSDoc comment is required, so the conversion to the regular UI5 `.extend(...)` call knows the full namespace of the class. `@name` is used here, giving the full name of the controller. In the controllers generated from the template it was just the `@namespace` without the controller's own name. Both options are equally valid.
+
 5.  In `src/view/Main.view.xml`, add the attribute `press=".navToIncidenceDetail"` to the `<CustomListItem...` tag to trigger navigation. As result, the line should look like this:
 
 	```xml
