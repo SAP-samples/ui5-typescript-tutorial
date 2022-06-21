@@ -79,7 +79,7 @@ npm install chart.js --save-dev
 Now you can verify whether the custom middleware works fine or not by running the development server with `npm start` (re-start it, if it was already running before the above changes) and trying to open the Chart.js file from [http://localhost:8080/resources/chart.js.js](http://localhost:8080/resources/chart.js.js)
 
 > **Remark:**
-> To make TypeScript look for type definitions also in node modules (`chart.js` is such a module coming with its type definitions), `"moduleResolution": "Node"` must be set in `tsconfig.json`. However, this setting is already present in the app template, so you don't need to do it.
+> To make TypeScript look for type definitions also in node modules (`chart.js` is such a module coming with its type definitions), `"moduleResolution": "node"` must be set in `tsconfig.json`. However, this setting is already present in the app template, so you don't need to do it.
 
 ## Exercise 8.3 - Adding Chart.js to the LineChart
 
