@@ -32,6 +32,6 @@ Files: backup_data/*
 Copyright: Marlon Lückert
 License: CC-BY-4.0
 
-Files: */chart.js.js
+Files: */auto.js
 Copyright: 2014-2021 Chart.js Contributors
 License: MIT

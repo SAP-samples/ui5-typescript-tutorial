@@ -8,7 +8,7 @@
 		id="incidenceDetailPage"
 		title="{incidenceHistory>name}"
 		showNavButton="true"
-		navButtonPress=".onNavButtonPress">
+		navButtonPress=".onNavBack">
 		<cc:LineChart
 				title="{incidenceHistory>name}"
 				color="red"

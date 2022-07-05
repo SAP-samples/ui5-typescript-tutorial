@@ -1,37 +1,37 @@
 {
 	"name": "com.myorg.myapp",
 	"version": "1.0.0",
-	"buildTimestamp": "202201121220",
+	"buildTimestamp": "202207051038",
 	"scmRevision": "",
 	"libraries": [
 		{
 			"name": "sap.f",
-			"version": "1.97.0",
-			"buildTimestamp": "202201121220",
+			"version": "1.103.0",
+			"buildTimestamp": "202207051038",
 			"scmRevision": ""
 		},
 		{
 			"name": "sap.m",
-			"version": "1.97.0",
-			"buildTimestamp": "202201121220",
+			"version": "1.103.0",
+			"buildTimestamp": "202207051038",
 			"scmRevision": ""
 		},
 		{
 			"name": "sap.ui.core",
-			"version": "1.97.0",
-			"buildTimestamp": "202201121220",
+			"version": "1.103.0",
+			"buildTimestamp": "202207051038",
 			"scmRevision": ""
 		},
 		{
 			"name": "sap.ui.layout",
-			"version": "1.97.0",
-			"buildTimestamp": "202201121220",
+			"version": "1.103.0",
+			"buildTimestamp": "202207051038",
 			"scmRevision": ""
 		},
 		{
 			"name": "sap.ui.unified",
-			"version": "1.97.0",
-			"buildTimestamp": "202201121220",
+			"version": "1.103.0",
+			"buildTimestamp": "202207051038",
 			"scmRevision": ""
 		}
 	]

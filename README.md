@@ -25,4 +25,4 @@ Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved. This
 
 The files inside the `backup_data` directory are copyright by Marlon Lückert and licensed under the [CC-BY-4.0 license](LICENSES/CC-BY-4.0.txt).
 
-The `chart.js.js` files are copyright 2014-2021 Chart.js Contributors and licensed under the [MIT license](LICENSES/MIT.txt).
+The `.../resources/chart.js/auto.js` files are copyright 2014-2021 Chart.js Contributors and licensed under the [MIT license](LICENSES/MIT.txt).

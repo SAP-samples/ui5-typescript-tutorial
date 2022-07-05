@@ -2,17 +2,17 @@
 	controllerName="com.myorg.myapp.controller.Main"
 	displayBlock="true"
 	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
 	xmlns:f="sap.f"
 	xmlns:grid="sap.ui.layout.cssgrid"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:core="sap.ui.core">
+	xmlns:mvc="sap.ui.core.mvc">
 
 	<Page id="page" title="{i18n>title}">
 		<content>
-			<f:GridList id="statesList" 
+			<f:GridList id="statesList"
 				items="{path: '/data', sorter: {path: 'weekIncidence', descending: true}}"
-				class="sapUiContentPadding"
-				noDataText="No state data">
+				noDataText="No state data"
+				class="sapUiContentPadding">
 				<f:customLayout>
 					<grid:GridBoxLayout/>
 				</f:customLayout>

@@ -1,8 +1,13 @@
-sap.ui.define(["sap/ui/core/Control", "chart.js"], function (Control, __chartjs) {
-  const Chart = __chartjs["Chart"];
+sap.ui.define(["sap/ui/core/Control", "chart.js/auto"], function (Control, __Chart) {
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule && typeof obj.default !== "undefined" ? obj.default : obj;
+  }
+
+  const Chart = _interopRequireDefault(__Chart);
   /**
   * @name com.myorg.myapp.control.LineChart
   */
+
 
   const LineChart = Control.extend("com.myorg.myapp.control.LineChart", {
     renderer: {

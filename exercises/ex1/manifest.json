@@ -5,8 +5,8 @@
 		"id": "com.myorg.myapp",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
-		"title": "{{app_title}}",
-		"description": "{{app_description}}",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
 		"applicationVersion": {
 			"version": "1.0.0"
 		}
@@ -33,7 +33,7 @@
 		},
 
 		"dependencies": {
-			"minUI5Version": "1.97.0",
+			"minUI5Version": "1.103.0",
 			"libs": {
 				"sap.ui.core": {},
 				"sap.ui.layout": {},

@@ -10,11 +10,11 @@ sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/Device", "sap/ui/model/json/JS
     },
     init: function _init() {
       // call the base component's init function
-      UIComponent.prototype.init.call(this); // create the views based on the url/hash
+      UIComponent.prototype.init.call(this);
+      const model = new JSONModel("../../backup_data/states.json");
+      this.setModel(model); // create the views based on the url/hash
 
       this.getRouter().initialize();
-      const model = new JSONModel("../../backup_data/states.json");
-      this.setModel(model);
     },
     getContentDensityClass: function _getContentDensityClass() {
       if (this.contentDensityClass === undefined) {

@@ -1,1 +1,1 @@
-sap.ui.define(["sap/m/MessageBox","sap/ui/core/mvc/Controller"],function(o,e){const n=e.extend("com.myorg.myapp.controller.Main",{sayHello:function e(){o.show("Hello World!")}});return n});
+sap.ui.define(["sap/m/MessageBox","./BaseController"],function(e,o){function n(e){return e&&e.__esModule&&typeof e.default!=="undefined"?e.default:e}const t=n(o);const l=t.extend("com.myorg.myapp.controller.Main",{sayHello:function o(){e.show("Hello World!")}});return l});
