@@ -86,6 +86,6 @@ When you look at the running app now, the icons are colored depending on the loc
 You've now extended the view and added formatters to the controller which are used for formatting the number and defining the icon color.
 
 ![](images/colored_incidencelist.png)
-> **Remark**: this screenshot is not adapted to current incidences and coloring thresholds.
+> **Remark:** this screenshot is not adapted to current incidences and coloring thresholds.
 
 Continue to - [Exercise 5 - Create a Second View](../ex5/README.md)

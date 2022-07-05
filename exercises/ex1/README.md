@@ -23,7 +23,7 @@ Now Yeoman will ask you several questions necessary to create your application:
 
 After answering all questions (just press `Enter` to confirm the defaults), Yeoman runs `npm install` in the application directory. Once completed you can switch into the directory `com.myorg.myapp`.
 
-> `yo easy-ui5 ts-app` may cause an error to download and install the `ts-app` template on Macs. In this case, a similar error like this can appear:
+> **Remark:** `yo easy-ui5 ts-app` may run into an error when downloading and installing the `ts-app` template on Macs. In this case, an error message like this can appear:
 >
 > ```sh
 > Error: EACCES: permission denied, mkdir '/path/to/project/ProjectName'
@@ -34,7 +34,7 @@ After answering all questions (just press `Enter` to confirm the defaults), Yeom
 >
 > The issue appears as your global `node_modules` folder is located in your `usr/local/lib` folder for which owner permissions are needed to create/modify/delete files or folders. To overcome this issue run `chmod ugo+rwx /usr/local/lib/node_modules/generator-easy-ui5/plugin-generators` to ensure write permissions are granted.
 
-> `npm install` may cause an error in finding dependencies. In this case, a similar error like this can appear:
+> **Remark:** `npm install` may run into an error while finding dependencies. In this case, an error message like this can appear:
 >
 > ```sh
 > npm ERR! code ETARGET
@@ -49,7 +49,7 @@ After answering all questions (just press `Enter` to confirm the defaults), Yeom
 
 Switch into new folder `com.myorg.myapp` and open the editor of your choice (e.g. [Visual Studio Code](https://code.visualstudio.com/)).
 
-> **REMARK**: make sure to open the folder `com.myorg.myapp` in the editor, not the folder above! Otherwise there may be errors indicating that `tsconfig.json` was not found!
+> **Remark:** make sure to open the folder `com.myorg.myapp` in the editor, not the folder above! Otherwise there may be errors indicating that `tsconfig.json` was not found!
 
 In the project root of the UI5 TypeScript application you will find the `package.json` and `ui5.yaml` which indicate that this is a UI5 application project. Compared to the classic UI5 application projects, the characteristic of the UI5 TypeScript application project is that the sources can be found in the `src` folder instead of the `webapp` folder. Instead of a `Component.js` you will find a `Component.ts` next to the manifest:
 
@@ -78,7 +78,7 @@ npm start
 
 This runs Babel in watch mode which transpiles and copies the sources from `src` to `webapp` folder. On top of the `webapp` folder, the UI5 tooling is running the development server to serve the application resources.
 
-Finally, it opens your default browser which runs the application. While the application is running you can now modify the application in your editor and directly see the changes once you saved them. This happens because the UI5 application project makes use of the [`ui5-middleware-livereload`](https://www.npmjs.com/package/ui5-middleware-livereload) which triggers a reload of the browser window whenever resources have been changed.
+Finally, it opens your default browser which runs the application. While the application is running you can now modify the application code in your editor and directly see the changes once you saved them. This happens because the UI5 application project makes use of the [`ui5-middleware-livereload`](https://www.npmjs.com/package/ui5-middleware-livereload) which triggers a reload of the browser window whenever resources have been changed.
 
 As long as you do not stop this `npm start` script, you will automatically see the updated app after doing the subsequent exercises.
 

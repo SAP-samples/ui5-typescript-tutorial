@@ -45,7 +45,8 @@ After completing this section, you will have a basic understanding of how UI5 ap
 
 After completing this step, the data will be loaded. This is the first step where you actually write code. It will hence provide another glimpse of the benefits TypeScript provides.
 
-> **REMARK**: whenever you completed a step in this tutorial and the result does not show up in the browser as expected, make sure you saved all changes! This sounds trivial, but is actually the most frequent cause for issues.
+> **Remark:** whenever you completed a step in this tutorial and the result does not show up in the browser as expected, make sure you saved all changes! This sounds trivial, but is actually the most frequent cause for issues.<br>
+Also make sure to edit the files below the `src` folder, not the generation results below `webapp`!
 
 1.	In the file `src/Component.ts`, find the `public init() : void {...` method and insert the following lines after the `super.init();` call. To experience how code completion works and makes development more efficient, we recommend that you type this block of code manually as described below and keep an eye on the suggestions provided by your IDE!
 
@@ -54,7 +55,7 @@ After completing this step, the data will be loaded. This is the first step wher
 			this.setModel(model);
 	```
 
-	> **Remark** if the URL does not work, you can use this one instead, which contains a static copy of the data: https://sap-samples.github.io/ui5-typescript-tutorial/backup_data/states.json
+	> **Remark:** if the URL does not work, you can use this one instead, which contains a static copy of the data: https://sap-samples.github.io/ui5-typescript-tutorial/backup_data/states.json
 
 	Even though the class `JSONModel` is not yet available within the file, TypeScript knows that it exists and suggests it, as soon as you typed `new JSON`. Selecting it from the list will not only complete the written code, but also add the required `import` statement at the top of the file.
 
@@ -163,7 +164,7 @@ After completing these steps, the main view will display a grid list of states i
 	```yaml
 	- name: sap.f
 	```
-	> **Remark** the same can be achieved using the UI5 tooling by executing `npx ui5 add sap.f`
+	> **Remark:** the same can be achieved using the UI5 tooling by executing `npx ui5 add sap.f`
 
 	Do the same in the file `ui5-dist.yaml`.
 

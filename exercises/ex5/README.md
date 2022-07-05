@@ -115,30 +115,32 @@ In this exercise, you will create a second view for incidence history details an
 
 	Initially, there are TypeScript errors displayed. While solving them, you will learn two more things about TypeScript:
 
-	1. In `(event.getSource() as Control).getBindingContext()`, you see a type cast to the `Control` class. Such a cast is sometimes needed for methods returning a base class (in this case: `sap.ui.base.EventProvider`) when you need to call a method (`getBindingContext()`) which does *not* exist on the base class, but only on a more specific sub-class (`sap.ui.core.Control`). Because the event triggering this method was registered on a `Control` (a `sap.m.CustomListItem`), this cast of the event source is safe.
-
-		There are two ways to write such a type cast. The other one would look like this: `(<Control> event.getSource()).getBindingContext()`. Basically it is a matter of taste which syntax to use - there is no official recommendation or wide-spread agreement. The `<...>` syntax was the original one, but it can easily be confused with the notation of generics, so many prefer the `as ...` syntax which was added to TypeScript later to be usable in JSX contexts.
-
-		Another typecast to `string` is applied at the end of the line because TypeScript does not know the model data structure. 
-
-	2. Importing the `Control` class is possible using the "Quick Fix..." in the error popup, as shown in previous exercises. But after doing so, there is still an error for event.getSource().
+	1. The first error is displayed for `event.getSource()`.
 	<img src="images/getsource_error.png" width="1283">
 
-	At first glance, it's not clear what the problem is. After all, the UI5 "Event" class [does have a "getSource()" method](https://ui5.sap.com/#/api/sap.ui.base.Event%23methods/getSource). Or doesn't it?<br>
+	   At first glance, it's not clear what the problem is. After all, the UI5 "Event" class [does have a "getSource()" method](https://ui5.sap.com/#/api/sap.ui.base.Event%23methods/getSource). Or doesn't it?<br>
 	Let's hover with the mouse over the "Event" type specified for the method parameter and you'll understand: TypeScript apparently thinks `Event` refers to the browser DOM event!
 	<img src="images/dom_event.png" width="1280">
 
-	As seen with the `window` object above, knowledge about the DOM `Event` type is built-in to TypeScript (note: there is no import for the "Event" type so far!). Due to the name equality, TypeScript assumes the DOM Event class is meant. This is something to keep in mind when dealing with types which have very generic and common names.<br>
+	   Knowledge about the DOM types like `Event` is built-in to TypeScript (note: there is no import in the file for the "Event" type so far!). Due to the name equality, TypeScript assumes the DOM Event class is meant. This is something to keep in mind when dealing with types which have very generic and common names.<br>
 	You can simply override by explicitly importing the UI5 Event class. Add the following line to the beginning of the file to get rid of the error:
 
 	```ts
 		import Event from "sap/ui/base/Event";
 	```
 
+	2. In `(event.getSource() as Control).getBindingContext()`, you see a type cast to the `Control` class. Such a cast is sometimes needed for methods returning a base class (in this case: `sap.ui.base.EventProvider`, as you can verify by hovering the method call) when you need to call a method (`getBindingContext()`) on the returned object which does *not* exist on the base class, but only on a more specific sub-class (`sap.ui.core.Control`). Because the event triggering this method was registered on a `Control` (a `sap.m.CustomListItem`), this cast of the event source is safe.
+
+		There are two ways to write such a type cast. The other one would look like this: `(<Control> event.getSource()).getBindingContext()`. Basically it is a matter of taste which syntax to use - there is no official recommendation or wide-spread agreement. The `<...>` syntax was the original one, but it can easily be confused with the notation of generics, so many prefer the `as ...` syntax which was added to TypeScript later to be usable in JSX contexts.
+
+		Another typecast to `string` is applied at the end of the line because TypeScript does not know the model data structure. 
+
+	Importing the `Control` class to fix the other displayed error is possible using the "Quick Fix..." in the error popup, as shown in previous exercises.
+
 ## Summary
 
 You've now created a second view and added event handlers to both views which trigger navigation back and forth. In those event handlers, you have used the routing APIs and the browser's own history API.
 
-In terms of TypeScript, you have learned two things: First, how type casting works and when it is needed. Second, that TypeScript comes with built-in types whose names can clash with the class you actually intend to use - and how to solve this conflict.
+In terms of TypeScript, you have learned two things: First, that TypeScript comes with built-in types whose names can clash with the class you actually intend to use - and how to solve this conflict. Second, how type casting works and when it is needed.
 
 Continue to - [Exercise 6 - Load Incidence History Data](../ex6/README.md)
