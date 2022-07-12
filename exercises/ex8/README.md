@@ -170,7 +170,7 @@ So add this method to the class body:
 	}
 ```
 
-From TypeScript perspective, the code above requires to cast the return value of `this.getDomRef("canvas")`: it has type `Element` (this time the real DOM `Eleement`, not the UI5 one!) but `Chart.js` requires a more specific `HTMLCanvasElement`.
+From TypeScript perspective, the code above requires to cast the return value of `this.getDomRef("canvas")`: it has type `Element` (this time the real DOM `Element`, not the UI5 one!) but `Chart.js` requires a more specific `HTMLCanvasElement`.
 
 > **Remark:**
 > For all JS libraries requiring DOM elements, it is a best practice to use a `Control` wrapper which allows to hook into the rendering lifecycle. The `renderer` should always use at least `apiVersion: 2` to ensure that in case of Control invalidation (e.g. via property changes) the DOM will be patched instead of replaced. This ensures that the DOM references will be kept stable. In general, JS libraries relying on references to DOM elements should be initialized in the `onAfterRendering` callback. At that point of time the DOM elements of the `Control` can be accessed via `this.getDomRef()`. Nested DOM elements which should be accessed should make use of id suffixes like shown above.
