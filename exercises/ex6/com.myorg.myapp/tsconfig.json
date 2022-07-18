@@ -14,8 +14,10 @@
         "baseUrl": "./",
         "moduleResolution": "node",
         "typeRoots": [
-            "./node_modules/@types",
-            "./node_modules/@openui5/ts-types-esm"
+            "./node_modules/@types"
+        ],
+        "types": [
+            "@openui5/ts-types-esm"
         ],
         "paths": {
             "com/myorg/myapp/*": [
