@@ -15,7 +15,7 @@ After completing these steps, incidence history data of the past 100 days is ava
 	```ts
 		onInit() {
 			const model = new JSONModel("https://api.corona-zahlen.org/states/history/incidence/100");
-			this.getView().setModel(model, "incidenceHistory");
+			this.setModel(model, "incidenceHistory");
 
 			UIComponent.getRouterFor(this).getRoute("IncidenceDetailRoute").attachMatched(this.onRouteMatched.bind(this));
 		}
