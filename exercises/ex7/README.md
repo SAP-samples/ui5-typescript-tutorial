@@ -10,11 +10,11 @@ After completing these steps you will have created a custom Control (which will 
 
 1. Inside `src`, next to the `controller` directory, create a new directory named `control`.
 
-	> **Remark:** make sure to create this directory in the correct location, as direct child of `src`! Otherwise the second page of the app will no longer show up and the browser console will display a failed attempt to load `com/myorg/myapp/control/LineChart.js`!
+	> :warning: **Remark:** make sure to create this directory in the correct location, as direct child of `src`! Otherwise the second page of the app will no longer show up and the browser console will display a failed attempt to load `com/myorg/myapp/control/LineChart.js`!
 
 2. Inside this new `control` directory, create a new file named `ChartRecord.ts` with the following content.<br>
 It implements an element with the properties `label` and `value`.
-	> **Remark:** `sap.ui.core.Element` is a base class of `sap.ui.core.Control` and is typically used for data binding when there is no need to produce HTML (because this can be done by the parent control). Hence, in most cases, elements do not have a renderer, and that's the main difference to a regular control.
+	> :warning: **Remark:** `sap.ui.core.Element` is a base class of `sap.ui.core.Control` and is typically used for data binding when there is no need to produce HTML (because this can be done by the parent control). Hence, in most cases, elements do not have a renderer, and that's the main difference to a regular control.
 	```ts
 	import UI5Element from "sap/ui/core/Element";
 
@@ -79,9 +79,9 @@ This is the actual LineChart control, aggregating the previously created ChartRe
 	}
 	```
 
-	> **Remark:** There is a TypeScript error for `getColor()`, one for `getRecords()` and one for `record`, but you'll deal with them later.
+	> :warning: **Remark:** There is a TypeScript error for `getColor()`, one for `getRecords()` and one for `record`, but you'll deal with them later.
 
-	> **Remark:** The `unsafeHtml` method has its alerting name to make you as developer aware that only content my be passed in which is guaranteed not to be malicious. Otherwise an attacker could sneak in script code which is executed in the page. In this case, the `value` property of the `ChartRecord` element has type `float`, so UI5 ensures that it can only contain numers - which are safe.<br>
+	> :warning: **Remark:** The `unsafeHtml` method has its alerting name to make you as developer aware that only content my be passed in which is guaranteed not to be malicious. Otherwise an attacker could sneak in script code which is executed in the page. In this case, the `value` property of the `ChartRecord` element has type `float`, so UI5 ensures that it can only contain numers - which are safe.<br>
 	The argument of this method uses a template string (denoted by backticks instead of quotes), which is modern JavaScript syntax allowing elegant embedding of variables and calculations.
 
 ## Exercise 7.2 Use the New Control in the Detail View

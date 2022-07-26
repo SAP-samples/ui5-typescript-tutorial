@@ -30,7 +30,7 @@ After completing these steps, incidence history data of the past 100 days is ava
 
 	Again, while the import of the `JSONModel` class can be done easily as "Quick Fix...", you need to explicitly add the line `import Event from "sap/ui/base/Event";` at the top of the file. Otherwise TypeScript will silently assume that the browser DOM class with the same name is meant.
 
-	> **Remark:** In case the data URL is down when doing the tutorial, you can use this one instead, which contains a static copy of the data: https://sap-samples.github.io/ui5-typescript-tutorial/backup_data/100.json
+	> :warning: **Remark:** In case the data URL is down when doing the tutorial, you can use this one instead, which contains a static copy of the data: https://sap-samples.github.io/ui5-typescript-tutorial/backup_data/100.json
 
 2.	Depending on your development environment, there might be a linting error displayed for the line starting with `path: "/data/" + `. If not, you can run `npm run lint` in a terminal window inside the project's root directory (`com.myorg.myapp`). This triggers the [ESLint](https://eslint.org/) tool and is a way to check for stylistic issues or possible bugs beyond those recognized by the TypeScript compiler. It will report two errors in this line:
 	```

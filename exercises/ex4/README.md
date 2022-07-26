@@ -33,7 +33,7 @@ After completing these steps, you will have added two formatters to the controll
 
 	Like all formatters in UI5, they get a raw value from the model and convert it to the value used in the UI. In the first case this happens by rounding, as the original data has a large number of decimals. In the second case by returning a color depending on the incidence.
 
-	> **Remark:**
+	> :warning: **Remark:**
 	You might need to adjust the incidence thresholds (which are hardcoded in this code snippet) in order to see all three colors.
 2.	Depending on your editor (automatically or when hovering the MessageBox import) or when running a lint check (explained later), you are warned that the MessageBox is no longer used.
 
@@ -86,6 +86,6 @@ When you look at the running app now, the icons are colored depending on the loc
 You've now extended the view and added formatters to the controller which are used for formatting the number and defining the icon color.
 
 ![](images/colored_incidencelist.png)
-> **Remark:** this screenshot is not adapted to current incidences and coloring thresholds.
+> :warning: **Remark:** this screenshot is not adapted to current incidences and coloring thresholds.
 
 Continue to - [Exercise 5 - Create a Second View](../ex5/README.md)

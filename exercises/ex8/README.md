@@ -10,7 +10,7 @@ Shimming of front-end NPM packages requires additional configuration in the `ui5
 
 If you are interested in the different module formats, you can find more details about the different module formats here: [CommonJS vs AMD vs RequireJS vs ES6 Modules](https://medium.com/computed-comparisons/commonjs-vs-amd-vs-requirejs-vs-es6-modules-2e814b114a0b).
 
-> **Remark:**
+> :warning: **Remark:**
 > This solution may not work for all kinds of NPM packages. The NPM packages should be frontend packages. Maybe in future the rollup configuration could be even customized to allow even more. Right now it is just using a predefined set of rollup plugins to bundle the NPM packages.
 
 ## Exercise 8.1 - Install/Configure UI5 Tooling Extensions
@@ -78,7 +78,7 @@ npm install chart.js --save-dev
 
 Now you can verify whether the custom middleware works fine or not by running the development server with `npm start` (re-start it, if it was already running before the above changes) and trying to open the Chart.js file from [http://localhost:8080/resources/chart.js.js](http://localhost:8080/resources/chart.js.js)
 
-> **Remark:**
+> :warning: **Remark:**
 > To make TypeScript look for type definitions also in node modules (`chart.js` is such a module coming with its type definitions), `"moduleResolution": "node"` must be set in `tsconfig.json`. However, this setting is already present in the app template, so you don't need to do it.
 
 ## Exercise 8.3 - Adding Chart.js to the LineChart
@@ -172,7 +172,7 @@ So add this method to the class body:
 
 From TypeScript perspective, the code above requires to cast the return value of `this.getDomRef("canvas")`: it has type `Element` (this time the real DOM `Element`, not the UI5 one!) but `Chart.js` requires a more specific `HTMLCanvasElement`.
 
-> **Remark:**
+> :warning: **Remark:**
 > For all JS libraries requiring DOM elements, it is a best practice to use a `Control` wrapper which allows to hook into the rendering lifecycle. The `renderer` should always use at least `apiVersion: 2` to ensure that in case of Control invalidation (e.g. via property changes) the DOM will be patched instead of replaced. This ensures that the DOM references will be kept stable. In general, JS libraries relying on references to DOM elements should be initialized in the `onAfterRendering` callback. At that point of time the DOM elements of the `Control` can be accessed via `this.getDomRef()`. Nested DOM elements which should be accessed should make use of id suffixes like shown above.
 
 Now, the detail page will display a line chart for the incidence data of the selected state. The detail page of your application should look like this:
