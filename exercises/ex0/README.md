@@ -24,9 +24,9 @@ To verify the version of the installed generator-easy-ui5 you can run the follow
 npm info generator-easy-ui5 version
 ```
 
-The version should be at least **```3.5.0```** to be able to consume the latest template from this repository available [here](https://github.com/SAP-samples/ui5-typescript-tutorial/tree/main/generator).
+:warning:  The version must be at least **```3.5.0```** to be able to consume the latest template from this repository available [here](https://github.com/SAP-samples/ui5-typescript-tutorial/tree/main/generator)!
 
-> :warning: **Remark:**
+> **Remark:**
 > For the tutorial we used the Easy UI5 Generator 3.5.0. You can also explicitly install this version via `npm install -g easy-ui5-generator@3.5.0`.
 
 ## Summary

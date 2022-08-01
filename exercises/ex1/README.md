@@ -11,7 +11,7 @@ The first step is using the UI5 TypeScript application template available within
 yo easy-ui5 SAP-samples/ui5-typescript-tutorial
 ```
 
-> :information_source: For this tutorial, a copy of the official generator for UI5 TypeScript applications is used since the official generator continuously evolves. With Easy UI5 Generator `3.5.0` it is possible to fetch a generator directly from a GitHub repository. This ensures a stable baseline for the tutorial. When starting new projects, it is highly recommended to use the official generator via: `yo easy-ui5 ts-app`.
+> :information_source: For this tutorial, a copy of the official generator for UI5 TypeScript applications is used since the official generator continuously evolves. With Easy UI5 Generator `3.5.0` it is possible to fetch a generator directly from a GitHub repository. This ensures a stable baseline for the tutorial. When starting new productive projects, it is highly recommended to use the official generator via: `yo easy-ui5 ts-app`.
 
 Now Yeoman will ask you several questions necessary to create your application:
 
@@ -19,7 +19,7 @@ Now Yeoman will ask you several questions necessary to create your application:
 ? How do you want to name this application? myapp
 ? Which namespace do you want to use? com.myorg
 ? Which framework do you want to use? OpenUI5
-? Which framework version do you want to use? 1.103.0
+? Which framework version do you want to use? 1.104.0
 ? Who is the author of the application? <Your Name>
 ? Would you like to create a new directory for the application? Yes
 ```
@@ -57,7 +57,7 @@ After answering all questions (just press `Enter` to confirm the defaults), Yeom
 
 ## Exercise 1.2 - Open Your Application
 
-Switch into new folder `com.myorg.myapp` and open the editor of your choice (e.g. [Visual Studio Code](https://code.visualstudio.com/)).
+Switch into the new folder `com.myorg.myapp` and open the editor of your choice (e.g. [Visual Studio Code](https://code.visualstudio.com/)).
 
 > :warning: **Remark:** make sure to open the folder `com.myorg.myapp` in the editor, not the folder above! Otherwise there may be errors indicating that `tsconfig.json` was not found!
 
