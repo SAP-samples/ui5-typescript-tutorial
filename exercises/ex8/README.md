@@ -70,10 +70,10 @@ Now we are able to consume front-end NPM packages directly from `node_modules` a
 
 ## Exercise 8.2 - Importing/Testing Chart.js
 
-Instead of displaying the incidence data in a list, we want to display it in a `LineChart`. SAPUI5 does contain various chart controls, but OpenUI5 does not. Therefore, we will install the [Chart.js](https://www.chartjs.org/docs/latest/) NPM package:
+Instead of displaying the incidence data in a list, we want to display it in a `LineChart`. SAPUI5 does contain various chart controls, but OpenUI5 does not. Therefore, we will install the [Chart.js](https://www.chartjs.org/docs/latest/) NPM package (in version 3.8, as 3.9 introduced a breaking change):
 
 ```sh
-npm install chart.js --save-dev
+npm install chart.js@~3.8 --save-dev
 ```
 
 Now you can verify whether the custom middleware works fine or not by running the development server with `npm start` (re-start it, if it was already running before the above changes) and trying to open the Chart.js file from [http://localhost:8080/resources/chart.js.js](http://localhost:8080/resources/chart.js.js)
