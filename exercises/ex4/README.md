@@ -14,9 +14,9 @@ After completing these steps, you will have added two formatters to the controll
 		}
 
 		formatIconColor(incidence: number) {
-			if (incidence < 500) {
+			if (incidence < 50) {
 				return IconColor.Default;
-			} else if (incidence < 800) {
+			} else if (incidence < 100) {
 				return IconColor.Critical;
 			} else {
 				return IconColor.Negative;
