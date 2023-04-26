@@ -15,7 +15,7 @@ The technical requirements to follow the tutorial are:
 
 Required knowledge:
 
-* You should have basic Javascript knowledge to avoid blind copy&paste without knowing what's going on
+* You should have basic Javascript knowledge to avoid blind copy&paste without knowing what's going on.
 * Basic UI5 knowledge is beneficial, as this tutorial focuses on the TypeScript side of things.
 * TypeScript knowledge is not required. If interested, having a quick look e.g. at [this brief TypeScript intro for JavaScript developers](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html) might let you know what to expect.
 
@@ -23,7 +23,7 @@ Required knowledge:
 
 The tutorial consists of the following exercises. To start, just [open the first link](exercises/ex0/) - you will be guided from there.
 
-From the list, you can not only access each exercise directly, but also also browse the resulting sources and run the resulting app:
+From this list, you can not only access each exercise directly, but also also browse the resulting sources and run the resulting app:
 * [Exercise 0 - Getting Started](exercises/ex0/)
 * [Exercise 1 - Create And Run Your Application](exercises/ex1/) (*[browse sources](exercises/ex1/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex1/)*)
 * [Exercise 2 - Create the Initial User Interface and set up Routing](exercises/ex2/) (*[browse sources](exercises/ex2/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex2/)*)
@@ -58,6 +58,6 @@ This repository is provided as-is, without any support guarantees. However, you 
 
 ## License
 
-Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
+Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
 
 The files inside the `backup_data` directory are created by the API copyright by Marlon Lückert and licensed under the [CC-BY-4.0 license](LICENSES/CC-BY-4.0.txt).

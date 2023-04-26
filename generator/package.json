@@ -4,7 +4,7 @@
   "description": "Yeoman-based (sub-)generator for a basic UI5 application based on TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "cd test && yo ../../generator-ui5-ts-app"
+    "test": "cd test && yo .."
   },
   "keywords": [
     "ui5",

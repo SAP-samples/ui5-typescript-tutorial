@@ -36,9 +36,9 @@ module.exports = class extends Generator {
       SAPUI5: "1.90.0" //"1.77.0"
     };
 
-    const fwkDependencies = {
-      OpenUI5: "@openui5/ts-types-esm",
-      SAPUI5: "@sapui5/ts-types-esm"
+    const getTypePackageFor = function(framework, version = "99.99.99") {
+      const typesName = semver.gte(version, "1.113.0") ? "types" : "ts-types-esm";
+      return `@${framework.toLowerCase()}/${typesName}`;
     };
 
     const prompts = [
@@ -84,14 +84,14 @@ module.exports = class extends Generator {
         name: "frameworkVersion",
         message: "Which framework version do you want to use?",
         default: async (answers) => {
-          const npmPackage = fwkDependencies[answers.framework];
+          const npmPackage = getTypePackageFor(answers.framework);
           try {
             return (await packageJson(npmPackage)).version;
           } catch (ex) {
             chalk.red('Failed to lookup latest version for ${npmPackage}! Fallback to min version...')
             return minFwkVersion[answers.framework];
           }
-      },
+        },
         validate: v => {
           return (
             (v && semver.valid(v) && semver.gte(v, this._minFwkVersion)) ||
@@ -127,7 +127,7 @@ module.exports = class extends Generator {
       this.config.set(props);
 
       // determine the ts-types and version
-      this.config.set("tstypes", `@${props.framework.toLowerCase()}/ts-types-esm`);
+      this.config.set("tstypes", getTypePackageFor(props.framework, props.frameworkVersion));
       this.config.set("tstypesVersion", props.frameworkVersion);
 
       // appId + appURI

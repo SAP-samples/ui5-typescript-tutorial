@@ -19,7 +19,7 @@ Now Yeoman will ask you several questions necessary to create your application:
 ? How do you want to name this application? myapp
 ? Which namespace do you want to use? com.myorg
 ? Which framework do you want to use? OpenUI5
-? Which framework version do you want to use? 1.104.0
+? Which framework version do you want to use? 1.113.0
 ? Who is the author of the application? <Your Name>
 ? Would you like to create a new directory for the application? Yes
 ```

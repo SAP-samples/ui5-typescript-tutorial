@@ -3,10 +3,10 @@
     "application": "myapp",
     "namespace": "com.myorg",
     "framework": "OpenUI5",
-    "frameworkVersion": "1.104.0",
+    "frameworkVersion": "1.113.0",
     "author": "UI5 Team",
-    "tstypes": "@openui5/ts-types-esm",
-    "tstypesVersion": "1.104.0",
+    "tstypes": "@openui5/types",
+    "tstypesVersion": "1.113.0",
     "appId": "com.myorg.myapp",
     "appURI": "com/myorg/myapp",
     "setupCompleted": true
