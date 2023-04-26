@@ -21,7 +21,7 @@ The main link opens the partially optimized build result where TypeScript source
 In case the data cannot be loaded from the public API, you can see [the final stage of the application here](exercises/backup/) (using a backup copy of the data). [Here](exercises/backup/debug/) is the debuggable version.
 
 ## License
-Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
+Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
 
 The files inside the `backup_data` directory are copyright by Marlon Lückert and licensed under the [CC-BY-4.0 license](LICENSES/CC-BY-4.0.txt).
 

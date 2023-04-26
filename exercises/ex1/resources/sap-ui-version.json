@@ -6,25 +6,25 @@
 	"libraries": [
 		{
 			"name": "sap.m",
-			"version": "1.103.0",
+			"version": "1.113.0",
 			"buildTimestamp": "202207051023",
 			"scmRevision": ""
 		},
 		{
 			"name": "sap.ui.core",
-			"version": "1.103.0",
+			"version": "1.113.0",
 			"buildTimestamp": "202207051023",
 			"scmRevision": ""
 		},
 		{
 			"name": "sap.ui.layout",
-			"version": "1.103.0",
+			"version": "1.113.0",
 			"buildTimestamp": "202207051023",
 			"scmRevision": ""
 		},
 		{
 			"name": "sap.ui.unified",
-			"version": "1.103.0",
+			"version": "1.113.0",
 			"buildTimestamp": "202207051023",
 			"scmRevision": ""
 		}
