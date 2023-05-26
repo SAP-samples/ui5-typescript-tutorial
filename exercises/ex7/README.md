@@ -16,13 +16,13 @@ After completing these steps you will have created a custom Control (which will 
 It implements an element with the properties `label` and `value`.
 	> :warning: **Remark:** `sap.ui.core.Element` is a base class of `sap.ui.core.Control` and is typically used for data binding when there is no need to produce HTML (because this can be done by the parent control). Hence, in most cases, elements do not have a renderer, and that's the main difference to a regular control.
 	```ts
-	import UI5Element from "sap/ui/core/Element";
+	import UI5Element, { MetadataOptions } from "sap/ui/core/Element";
 
 	/**
 	 * @name com.myorg.myapp.control.ChartRecord
 	 */
 	export default class ChartRecord extends UI5Element {
-		static readonly metadata = {
+		static readonly metadata: MetadataOptions = {
 			properties: {
 				label: "string",
 				value: "float"
@@ -31,7 +31,7 @@ It implements an element with the properties `label` and `value`.
 	}
 	```
 
-	The base class from which to inherit is called `Element`. This can again lead to confusion with the HTML DOM class `Element`. So make sure to import the superclass type `from "sap/ui/core/Element"`. It does not matter how you name the imported type: it could be named `Element`, like you did with `Event` in the previous exercises, but to avoid confusion for readers of the code, one can alternatively also name it `UI5Element`, as done here.
+	The base class from which to inherit is called `Element`. This can again lead to confusion with the HTML DOM class `Element`. So make sure to import the superclass type `from "sap/ui/core/Element"`. It does not matter how you name the imported type: it could be named `Element`, like you did with `Event` in the previous exercises, but to avoid confusion for readers of the code, one can alternatively also name it `UI5Element`, as done here. The other thing imported from the `sap/ui/core/Element` module is the `MetadataOptions` type, which describes the structure of the metadata. This not only gives type checking and code completion for this structure, but also prevents issues when inheriting from this Element. It is available since UI5 1.110.0.
 
 	Note how the class definition is modern JavaScript class syntax, just like used before in the controllers and in `Component.ts`. Here you can also see how to specify the control API metadata as a *static readonly* property.
 
@@ -42,13 +42,14 @@ This is the actual LineChart control, aggregating the previously created ChartRe
 	```js
 	import Control from "sap/ui/core/Control";
 	import RenderManager from "sap/ui/core/RenderManager";
+	import type { MetadataOptions } from "sap/ui/core/Element";
 
 	/**
 	* @name com.myorg.myapp.control.LineChart
 	*/
 	export default class LineChart extends Control {
 
-		static readonly metadata = {
+		static readonly metadata: MetadataOptions = {
 			properties: {
 				"title": "string",
 				"color": "sap.ui.core.CSSColor"
@@ -83,6 +84,8 @@ This is the actual LineChart control, aggregating the previously created ChartRe
 
 	> :warning: **Remark:** The `unsafeHtml` method has its alerting name to make you as developer aware that only content my be passed in which is guaranteed not to be malicious. Otherwise an attacker could sneak in script code which is executed in the page. In this case, the `value` property of the `ChartRecord` element has type `float`, so UI5 ensures that it can only contain numers - which are safe.<br>
 	The argument of this method uses a template string (denoted by backticks instead of quotes), which is modern JavaScript syntax allowing elegant embedding of variables and calculations.
+
+	Again, `MetadataOptions` is used for typing the metadata structure. Here, nothing else is imported from the `sap/ui/core/Element` module, hence TypeScript's `import type` statement can be used, which leaves zero footprint at runtime and is meant for pure type imports.
 
 ## Exercise 7.2 Use the New Control in the Detail View
 
@@ -147,7 +150,7 @@ To use this tool:
 
 	As a result, the TypeScript error messages are gone and code completion is also available for all control API methods.
 
-	You can now stop the interface generator again, as no further control API changes will be done in this tutorial.
+	You can now stop the interface generator again, as no further control API changes will be done in this tutorial. For continuous control development with frequent API changes, you would likely add a "watch" task to package.json for starting this generator.
 
 3.  To complete the setup of the generated interfaces, follow the instructions found in the console output of the interface generator. It says:
 

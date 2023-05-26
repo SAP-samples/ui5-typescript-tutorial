@@ -1,5 +1,6 @@
 import Control from "sap/ui/core/Control";
 import RenderManager from "sap/ui/core/RenderManager";
+import type { MetadataOptions } from "sap/ui/core/Element";
 import Chart from "chart.js/auto";
 
 /**
@@ -14,7 +15,7 @@ export default class LineChart extends Control {
 	constructor(id?: string, settings?: $LineChartSettings);
 	constructor(id?: string, settings?: $LineChartSettings) { super(id, settings); }
 
-	static readonly metadata = {
+	static readonly metadata: MetadataOptions = {
 		properties: {
 			"title": "string",
 			"color": "sap.ui.core.CSSColor"

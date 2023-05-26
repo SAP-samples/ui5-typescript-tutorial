@@ -1,4 +1,4 @@
-import UI5Element from "sap/ui/core/Element";
+import UI5Element, { MetadataOptions } from "sap/ui/core/Element";
 
 /**
  * @name com.myorg.myapp.control.ChartRecord
@@ -10,7 +10,7 @@ export default class ChartRecord extends UI5Element {
 	constructor(id?: string, settings?: $ChartRecordSettings);
 	constructor(id?: string, settings?: $ChartRecordSettings) { super(id, settings); }
 
-	static readonly metadata = {
+	static readonly metadata: MetadataOptions = {
 		properties: {
 			label: "string",
 			value: "float"
