@@ -26,7 +26,7 @@ The tutorial consists of the following exercises. To start, just [open the first
 From this list, you can not only access each exercise directly, but also also browse the resulting sources and run the resulting app:
 * [Exercise 0 - Getting Started](exercises/ex0/)
 * [Exercise 1 - Create And Run Your Application](exercises/ex1/) (*[browse sources](exercises/ex1/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex1/)*)
-* [Exercise 2 - Create the Initial User Interface and set up Routing](exercises/ex2/) (*[browse sources](exercises/ex2/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex2/)*)
+* [Exercise 2 - Create the Initial User Interface and Load Data](exercises/ex2/) (*[browse sources](exercises/ex2/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex2/)*)
 * [Exercise 3 - Add Translated UI Texts](exercises/ex3/) (*[browse sources](exercises/ex3/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex3/)*)
 * [Exercise 4 - Enhance the User Interface and Use Formatters](exercises/ex4/) (*[browse sources](exercises/ex4/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex4/)*)
 * [Exercise 5 - Create a Second View](exercises/ex5/) (*[browse sources](exercises/ex5/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex5/)*)

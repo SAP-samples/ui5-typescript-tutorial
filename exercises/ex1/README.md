@@ -96,4 +96,4 @@ As long as you do not stop this `npm start` script, you will automatically see t
 
 Congratulations, you have created your first UI5 application project using TypeScript from scratch and can now gather your first experience with UI5 and TypeScript. Let's go ahead and start developing the application further.
 
-Continue to - [Exercise 2 - Create the Initial User Interface and set up Routing](../ex2/README.md)
+Continue to - [Exercise 2 - Create the Initial User Interface and Load Data](../ex2/README.md)
