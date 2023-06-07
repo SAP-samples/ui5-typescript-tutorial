@@ -1,4 +1,4 @@
-# Exercise 2 - Create the Initial User Interface and set up Routing
+# Exercise 2 - Create the Initial User Interface and Load Data
 
 In this exercise, you will load live data and display first parts of it: the states of Germany. Actual Covid incidence data will be added later.
 
