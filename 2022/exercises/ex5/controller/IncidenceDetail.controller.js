@@ -1,0 +1,1 @@
+sap.ui.define(["./BaseController"],function(e){function n(e){return e&&e.__esModule&&typeof e.default!=="undefined"?e.default:e}const t=n(e);const o=t.extend("com.myorg.myapp.controller.IncidenceDetail",{});return o});
