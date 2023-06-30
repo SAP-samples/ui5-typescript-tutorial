@@ -55,7 +55,7 @@ Also make sure to edit the files below the `src` folder, not the generation resu
 			this.setModel(model);
 	```
 
-	> :warning: **Remark:** if the URL does not work, you can use this one instead, which contains a static copy of the data: https://sap-samples.github.io/ui5-typescript-tutorial/backup_data/states.json
+	> :warning: **Remark:** if the URL does not work, you can use this one instead, which contains a static copy of the data: https://sap-samples.github.io/ui5-typescript-tutorial/2022/backup_data/states.json
 
 	Even though the class `JSONModel` is not yet available within the file, TypeScript knows that it exists and suggests it, as soon as you typed `new JSON`. Selecting it from the list will not only complete the written code, but also add the required `import` statement at the top of the file.
 

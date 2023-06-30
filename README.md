@@ -2,6 +2,9 @@
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/ui5-typescript-tutorial)](https://api.reuse.software/info/github.com/SAP-samples/ui5-typescript-tutorial)
 
+**IMPORTANT: This is the year 2022 version of the UI5 TypeScript tutorial! It results in a nice app with charts and is mostly still valid, but uses a TypeScript setup, where things are more explicitly configured and happening less under the hood (might be interesting to see). Some mentioned limitations may be resolved in the meantime and the used Covid incidence data is not really meaningful anymore. This 2022 version of the tutorial is no longer being updated.<br>The 2023-updated version of the tutorial will be (or is already) in the `main` branch of this repository.**
+
+
 ## Overview
 
 This brief (~2-hours) tutorial introduces developers to UI5 application development *in TypeScript*. It includes creating a basic application from the TypeScript template using the ["easy-UI5"](https://github.com/SAP/generator-easy-ui5) generator, TypeScript coding in regular UI controllers, as well as advanced topics like custom control development and using third-party libraries.
@@ -25,19 +28,19 @@ The tutorial consists of the following exercises. To start, just [open the first
 
 From this list, you can not only access each exercise directly, but also also browse the resulting sources and run the resulting app:
 * [Exercise 0 - Getting Started](exercises/ex0/)
-* [Exercise 1 - Create And Run Your Application](exercises/ex1/) (*[browse sources](exercises/ex1/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex1/)*)
-* [Exercise 2 - Create the Initial User Interface and Load Data](exercises/ex2/) (*[browse sources](exercises/ex2/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex2/)*)
-* [Exercise 3 - Add Translated UI Texts](exercises/ex3/) (*[browse sources](exercises/ex3/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex3/)*)
-* [Exercise 4 - Enhance the User Interface and Use Formatters](exercises/ex4/) (*[browse sources](exercises/ex4/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex4/)*)
-* [Exercise 5 - Create a Second View](exercises/ex5/) (*[browse sources](exercises/ex5/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex5/)*)
-* [Exercise 6 - Load Incidence History Data](exercises/ex6/) (*[browse sources](exercises/ex6/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex6/)*)
-* [Exercise 7 - Create and Use a Custom Control](exercises/ex7/) (*[browse sources](exercises/ex7/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex7/)*)
-* [Exercise 8 - Using NPM Packages](exercises/ex8/) (*[browse sources](exercises/ex8/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex8/)*)
-* [Exercise 9 - Beautifying the Chart](exercises/ex9/) (*[browse sources](exercises/ex9/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex9/)*)
+* [Exercise 1 - Create And Run Your Application](exercises/ex1/) (*[browse sources](exercises/ex1/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/2022/exercises/ex1/)*)
+* [Exercise 2 - Create the Initial User Interface and Load Data](exercises/ex2/) (*[browse sources](exercises/ex2/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/2022/exercises/ex2/)*)
+* [Exercise 3 - Add Translated UI Texts](exercises/ex3/) (*[browse sources](exercises/ex3/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/2022/exercises/ex3/)*)
+* [Exercise 4 - Enhance the User Interface and Use Formatters](exercises/ex4/) (*[browse sources](exercises/ex4/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/2022/exercises/ex4/)*)
+* [Exercise 5 - Create a Second View](exercises/ex5/) (*[browse sources](exercises/ex5/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/2022/exercises/ex5/)*)
+* [Exercise 6 - Load Incidence History Data](exercises/ex6/) (*[browse sources](exercises/ex6/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/2022/exercises/ex6/)*)
+* [Exercise 7 - Create and Use a Custom Control](exercises/ex7/) (*[browse sources](exercises/ex7/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/2022/exercises/ex7/)*)
+* [Exercise 8 - Using NPM Packages](exercises/ex8/) (*[browse sources](exercises/ex8/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/2022/exercises/ex8/)*)
+* [Exercise 9 - Beautifying the Chart](exercises/ex9/) (*[browse sources](exercises/ex9/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/2022/exercises/ex9/)*)
 
 If you want to download the code for all the exercises, you can either [download the entire repository as zip file](https://github.com/SAP-samples/ui5-typescript-tutorial/archive/refs/heads/main.zip) and find the content in there below "ui5-typescript-tutorial-main/exercises/ex1/com.myorg.myapp" etc., or you can clone the repository using git.<br>
 
-The resulting app after each exercise can also be [run from this page](https://sap-samples.github.io/ui5-typescript-tutorial). It includes additional links to unoptimized versions of the app, which can be used to debug the original TypeScript sources.
+The resulting app after each exercise can also be [run from this page](https://sap-samples.github.io/ui5-typescript-tutorial/2022). It includes additional links to unoptimized versions of the app, which can be used to debug the original TypeScript sources.
 
 ## High-Level Application Idea
 
