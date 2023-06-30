@@ -7,8 +7,8 @@ In this exercise, we will create a UI5 TypeScript application from scratch and r
 The first step is using the UI5 TypeScript application template available within the Easy UI5 Generator:
 
 ```sh
-# Use a copy of "yo easy-ui5 ts-app" for the tutorial
-yo easy-ui5 SAP-samples/ui5-typescript-tutorial
+# Use a copy of "yo easy-ui5 ts-app" for the tutorial; make sure to take it from the "main_2022" branch
+yo easy-ui5  SAP-samples/ui5-typescript-tutorial#main_2022
 ```
 
 > :information_source: For this tutorial, a copy of the official generator for UI5 TypeScript applications is used since the official generator continuously evolves. With Easy UI5 Generator `3.5.0` it is possible to fetch a generator directly from a GitHub repository. This ensures a stable baseline for the tutorial. When starting new productive projects, it is highly recommended to use the official generator via: `yo easy-ui5 ts-app`.

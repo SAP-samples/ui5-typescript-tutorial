@@ -1,8 +1,8 @@
-# ui5-typescript-tutorial - Learn App Development in UI5 and TypeScript
+# ui5-typescript-tutorial - Learn App Development in UI5 and TypeScript (2022 version)
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/ui5-typescript-tutorial)](https://api.reuse.software/info/github.com/SAP-samples/ui5-typescript-tutorial)
 
-**IMPORTANT: This is the year 2022 version of the UI5 TypeScript tutorial! It results in a nice app with charts and is mostly still valid, but uses a TypeScript setup, where things are more explicitly configured and happening less under the hood (might be interesting to see). Some mentioned limitations may be resolved in the meantime and the used Covid incidence data is not really meaningful anymore. This 2022 version of the tutorial is no longer being updated.<br>The 2023-updated version of the tutorial will be (or is already) in the `main` branch of this repository.**
+**IMPORTANT: This is the year 2022 version of the UI5 TypeScript tutorial! It results in a nice app with charts and is mostly still valid, but uses a TypeScript setup, where things are more explicitly configured and happening less under the hood (might be interesting to see). Some mentioned limitations may be resolved in the meantime and the used Covid incidence data is not really meaningful anymore. This 2022 version of the tutorial is no longer being updated.<br>The 2023-updated version of the tutorial will be (or is already) in the [`main` branch of this repository](../..).**
 
 
 ## Overview
@@ -38,7 +38,7 @@ From this list, you can not only access each exercise directly, but also also br
 * [Exercise 8 - Using NPM Packages](exercises/ex8/) (*[browse sources](exercises/ex8/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/2022/exercises/ex8/)*)
 * [Exercise 9 - Beautifying the Chart](exercises/ex9/) (*[browse sources](exercises/ex9/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/2022/exercises/ex9/)*)
 
-If you want to download the code for all the exercises, you can either [download the entire repository as zip file](https://github.com/SAP-samples/ui5-typescript-tutorial/archive/refs/heads/main.zip) and find the content in there below "ui5-typescript-tutorial-main/exercises/ex1/com.myorg.myapp" etc., or you can clone the repository using git.<br>
+If you want to download the code for all the exercises, you can either [download the entire repository as zip file](https://github.com/SAP-samples/ui5-typescript-tutorial/archive/refs/heads/main_2022.zip) and find the content in there below "ui5-typescript-tutorial-main/exercises/ex1/com.myorg.myapp" etc., or you can clone the repository using git.<br>
 
 The resulting app after each exercise can also be [run from this page](https://sap-samples.github.io/ui5-typescript-tutorial/2022). It includes additional links to unoptimized versions of the app, which can be used to debug the original TypeScript sources.
 
