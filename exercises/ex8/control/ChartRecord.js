@@ -1,1 +1,0 @@
-sap.ui.define(["sap/ui/core/Element"],function(t){const o=t.extend("com.myorg.myapp.control.ChartRecord",{metadata:{properties:{label:"string",value:"float"}},constructor:function o(e,r){t.prototype.constructor.call(this,e,r)}});return o});

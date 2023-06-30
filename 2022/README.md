@@ -1,7 +1,10 @@
-# ui5-typescript-tutorial - Learn App Development in UI5 and TypeScript
+# ui5-typescript-tutorial - Learn App Development in UI5 and TypeScript (2022 version)
+
 ## Description
 
-[In its `main_2022` branch, this repository](https://github.com/SAP-samples/ui5-typescript-tutorial/blob/main/README.md) contains the instructions for the ui5-typescript-tutorial in its version from summer 2022. For all further information, [go there](https://github.com/SAP-samples/ui5-typescript-tutorial/blob/main_2022/README.md).
+These are the running app samples of the ui5-typescript-tutorial in its **version from summer 2022**. 
+
+[In its `main_2022` branch, this repository](https://github.com/SAP-samples/ui5-typescript-tutorial/blob/main_2022/README.md) contains the respective tutorial instructions. For the `main` branch with the updated 2023 tutorial instructions (as soon as available), [go here](https://github.com/SAP-samples/ui5-typescript-tutorial/blob/main/README.md) and for the updated app samples (as soon as available) [here](../README.md).
 
 ## Runnable Apps
 

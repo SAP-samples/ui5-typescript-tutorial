@@ -28,10 +28,6 @@ Files: *
 Copyright: 2023 SAP SE or an SAP affiliate company and ui5-typescript-tutorial contributors
 License: Apache-2.0
 
-Files: backup_data/* 
-Copyright: Marlon Lückert
-License: CC-BY-4.0
-
 Files: 2022/backup_data/* 
 Copyright: Marlon Lückert
 License: CC-BY-4.0
