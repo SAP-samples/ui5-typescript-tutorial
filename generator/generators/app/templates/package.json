@@ -21,18 +21,18 @@
 	},
 	"devDependencies": {
 		"<%= tstypes %>": "<%= tstypesVersion %>",
-		"@typescript-eslint/eslint-plugin": "^5.60.1",
-		"@typescript-eslint/parser": "^5.60.1",
-		"@ui5/cli": "^3.3.0",
+		"@typescript-eslint/eslint-plugin": "^5.61.0",
+		"@typescript-eslint/parser": "^5.61.0",
+		"@ui5/cli": "^3.3.1",
 		"eslint": "^8.44.0",
 		"karma": "^6.4.2",
 		"karma-chrome-launcher": "^3.2.0",
 		"karma-coverage": "^2.2.1",
 		"karma-ui5": "^3.0.3",
-		"karma-ui5-transpile": "^0.3.20",
+		"karma-ui5-transpile": "^0.3.22",
 		"rimraf": "^5.0.1",
 		"typescript": "^5.1.6",
-		"ui5-middleware-livereload": "^0.8.3",
-		"ui5-tooling-transpile": "^0.7.15"
+		"ui5-middleware-livereload": "^0.8.4",
+		"ui5-tooling-transpile": "^0.7.17"
 	}
 }
