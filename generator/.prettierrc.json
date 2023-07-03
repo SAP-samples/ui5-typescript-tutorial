@@ -1,0 +1,18 @@
+{
+	"singleQuote": false,
+	"trailingComma": "none",
+	"overrides": [
+		{
+			"files": ["*.xml"],
+			"options": {
+				"xmlWhitespaceSensitivity": "ignore"
+			}
+		},
+		{
+			"files": ["*.properties"],
+			"options": {
+				"keySeparator": "="
+			}
+		}
+	]
+}

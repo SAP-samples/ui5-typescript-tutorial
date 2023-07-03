@@ -1,0 +1,8 @@
+# Ignore node_files
+node_modules/
+
+# Ignore templates
+generators/*/templates/
+
+# Ignore test files
+test/

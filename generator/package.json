@@ -1,0 +1,60 @@
+{
+	"name": "generator-ui5-ts-app",
+	"version": "1.1.0",
+	"description": "Yeoman-based (sub-)generator for a basic UI5 application based on TypeScript",
+	"main": "generators/app/index.js",
+	"type": "module",
+	"scripts": {
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"lint:staged": "lint-staged",
+		"format": "prettier --write .",
+		"format:staged": "pretty-quick --staged --verbose",
+		"test": "cd test && yo ../../generator-ui5-ts-app",
+		"prepare": "node ./.husky/skip.js || husky install",
+		"hooks:pre-commit": "npm-run-all --sequential format:staged lint:staged"
+	},
+	"keywords": [
+		"yeoman-generator",
+		"ui5",
+		"openui5",
+		"sapui5",
+		"application",
+		"typescript"
+	],
+	"author": "Peter Muessig",
+	"license": "Apache-2.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ui5-community/generator-ui5-ts-app.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ui5-community/generator-ui5-ts-app/issues"
+	},
+	"homepage": "https://github.com/ui5-community/generator-ui5-ts-app#readme",
+	"dependencies": {
+		"chalk": "^5.2.0",
+		"glob": "^10.3.0",
+		"package-json": "^8.1.1",
+		"semver": "^7.5.2",
+		"upath": "^2.0.1",
+		"yeoman-generator": "^5.9.0",
+		"yosay": "^2.0.2"
+	},
+	"devDependencies": {
+		"@prettier/plugin-xml": "^2.2.0",
+		"eslint": "^8.43.0",
+		"eslint-plugin-jsdoc": "^46.2.6",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.2",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^2.8.8",
+		"prettier-plugin-properties": "^0.2.0",
+		"pretty-quick": "^3.1.3",
+		"yeoman-assert": "^3.1.1",
+		"yeoman-test": "^7.4.0"
+	},
+	"overrides": {
+		"minimist": ">=1.2.6"
+	}
+}

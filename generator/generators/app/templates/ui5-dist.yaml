@@ -1,0 +1,15 @@
+specVersion: "3.0"
+metadata:
+  name: <%= appId %>
+type: application
+resources:
+  configuration:
+    paths:
+      webapp: dist
+framework:
+  name: <%= framework %>
+  version: "<%= frameworkVersion %>"
+  libraries:
+    - name: sap.m
+    - name: sap.ui.core
+    - name: themelib_<%= defaultTheme %>

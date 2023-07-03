@@ -1,0 +1,7 @@
+# Ignore test files
+test/*/
+
+# Ignore all source files using the placeholders to kill the syntax
+generators/app/templates/webapp/Component.ts
+generators/app/templates/webapp/model/models.ts
+generators/app/templates/webapp/view/*.xml

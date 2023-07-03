@@ -1,0 +1,13 @@
+{
+	"root": true,
+	"env": {
+		"node": true,
+		"es6": true
+	},
+	"parserOptions": {
+		"ecmaVersion": 2022,
+		"sourceType": "module"
+	},
+	"extends": ["eslint:recommended", "plugin:jsdoc/recommended"],
+	"plugins": ["jsdoc"]
+}
