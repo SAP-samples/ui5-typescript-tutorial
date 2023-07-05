@@ -45,7 +45,7 @@ As the test code is not runtime relevant, we can use a more general namespace ra
 
 After completing these steps you are able to write a QUnit test for your application in TypeScript.
 
-1. In `webapp/test/controller/Main.qunit.ts` modify the `QUnit.test` code to check the availability of the `locationChange` function:
+1. In `webapp/test/unit/controller/Main.qunit.ts` modify the `QUnit.test` code to check the availability of the `locationChange` function:
 
 ```ts
 QUnit.test("The Main controller class has all custom methods", function (assert) {
@@ -64,7 +64,7 @@ Now you can validate whether the test execution works properly by starting the d
 
 After completing these steps you are able to write an OPA5 test for your application in TypeScript.
 
-1. In `webapp/integration/pages/MainPage.ts` modify the `MainPage` class by removing all actions and add the following action which enters the location *Heidelberg* in the input field with the id *location*:
+1. In `webapp/test/integration/pages/MainPage.ts` modify the `MainPage` class by removing all actions and add the following action which enters the location *Heidelberg* in the input field with the id *location*:
 
 ```ts
   [...]
@@ -82,7 +82,7 @@ After completing these steps you are able to write an OPA5 test for your applica
   [...]
 ```
 
-2. In `webapp/integration/pages/MainPage.ts` modify the `MainPage` class by removing all assertions and add the following assertion which checks the text of the first text control to contain the string *Heidelberg*:
+2. In `webapp/test/integration/pages/MainPage.ts` modify the `MainPage` class by removing all assertions and add the following assertion which checks the text of the first text control to contain the string *Heidelberg*:
 
 ```ts
   [...]
@@ -103,7 +103,7 @@ After completing these steps you are able to write an OPA5 test for your applica
   [...]
 ```
 
-3. In `webapp/integration/HelloJourney.ts` replace all existing `opaTest` entries with the following one:
+3. In `webapp/test/integration/HelloJourney.ts` replace all existing `opaTest` entries with the following one:
 
 ```ts
 opaTest("Should show location Heidelberg", function () {
@@ -171,7 +171,7 @@ To investigate the coverage of your TypeScript code, you can open the `coverage/
 
 After completing these steps you are able to write a QUnit test for your control in TypeScript.
 
-1. Create a new file called `webapp/test/control/WindDirection.qunit.ts`
+1. Create a new file called `webapp/test/unit/control/WindDirection.qunit.ts`
 
 2. First, import the `WindDirection` control
 
@@ -228,7 +228,7 @@ QUnit.test("Rendering", function (assert) {
 
 The test code aboves waits until the control has been rendered by using an event delegate. Once the control has been rendered, the test code verifies whether the `transform` style has been generated properly.
 
-6. Add the new QUnit test `unit/control/WindDirection.qunit` to the QUnit testsuite `test/unit/unitTests.qunit.ts`:
+6. Add the new QUnit test `unit/control/WindDirection.qunit` to the QUnit testsuite `webapp/test/unit/unitTests.qunit.ts`:
 
 ```ts
 // import all your QUnit tests here

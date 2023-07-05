@@ -15,7 +15,7 @@
 			<form:SimpleForm>
 				<Label text="Place" />
 				<Text text="{/placeName}" />
-
+				
 				<Label text="Temperature" />
 				<Text text="{/current_weather/temperature} °C" />
 				

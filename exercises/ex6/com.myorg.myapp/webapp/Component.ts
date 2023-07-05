@@ -2,7 +2,6 @@ import UIComponent from "sap/ui/core/UIComponent";
 import models from "./model/models";
 import Device from "sap/ui/Device";
 
-
 /**
  * @namespace com.myorg.myapp
  */

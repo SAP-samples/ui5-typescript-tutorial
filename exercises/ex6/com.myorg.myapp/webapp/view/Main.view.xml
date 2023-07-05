@@ -12,17 +12,17 @@
 
 	<Page id="page" title="Current Weather">
 		<content>
-			<Input id="location" change=".locationChange" placeholder="Enter Location" />
+			<Input change=".locationChange" placeholder="Enter Location" />
 			<form:SimpleForm>
 				<Label text="Place" />
 				<Text text="{/placeName}" />
 
 				<Label text="Temperature" />
 				<Text text="{/current_weather/temperature} °C" />
-
+				
 				<Label text="Wind Speed" />
 				<Text text="{/current_weather/windspeed} km/h" />
-
+				
 				<Label text="Wind Direction" />
 				<Text text="{/current_weather/winddirection} °" />
 

@@ -23,4 +23,3 @@ opaTest("Should show location Heidelberg", function () {
 	// Cleanup
 	onTheMainPage.iTeardownMyApp();
 });
-

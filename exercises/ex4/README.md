@@ -113,12 +113,16 @@ Now we are able to consume front-end NPM packages directly from `node_modules` a
 				referer: "https://localhost"
 			}).search({q: location}).then((results) => {
 				if (results.length > 0) {
-					this.loadWeatherData(results[0].lat, results[0].lon, results[0].display_name); // for simplicity just use the first/best match
+					return this.loadWeatherData(results[0].lat, results[0].lon, results[0].display_name); // for simplicity just use the first/best match
 				} else {
-					MessageBox.alert("Location " + location + " not found", {
+					MessageBox.alert(`Location ${location} not found`, {
 						actions: MessageBox.Action.CLOSE // enums are now properties on the default export!
 					});
 				}
+			}).catch(() => {
+				MessageBox.alert(`Failure while searching ${location}`, {
+					actions: MessageBox.Action.CLOSE // enums are now properties on the default export!
+				});
 			});
 		}
 	```

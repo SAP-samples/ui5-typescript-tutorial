@@ -18,10 +18,10 @@ export default class Main extends BaseController {
 		this.setModel(model);
 		void this.loadWeatherData();
 	}
-	
+
 	async loadWeatherData(lat = "49.31", lon = "8.64") { // default coordinates: Walldorf
 		const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
 		const jsonData = await response.json() as WeatherInfo;
-		(this.getModel() as JSONModel).setData(jsonData); 
+		(this.getModel() as JSONModel).setData(jsonData);
 	}
 }

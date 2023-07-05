@@ -3,8 +3,8 @@ import RenderManager from "sap/ui/core/RenderManager";
 import type { MetadataOptions } from "sap/ui/core/Element";
 
 /**
-* @name com.myorg.myapp.control.WindDirection
-*/
+ * @namespace com.myorg.myapp.control
+ */
 export default class WindDirection extends Control {
 
 	// The following three lines were generated and should remain as-is to make TypeScript aware of the constructor signatures
@@ -15,13 +15,13 @@ export default class WindDirection extends Control {
 	static readonly metadata: MetadataOptions = {
 		properties: {
 			/**
-			 * The direction in degrees FROM which the wind blows (this is the internationally common definition). Value 0 means: wind blows from North to South.
+			 * The direction in degrees FROM which the wind blows (this is the internationally common definition). Value 0 means: wind blows from North to South. 
 			 */
 			"direction": "float"
 		}
 	}
 
-	renderer = {
+	renderer = {  
 		apiVersion: 2,
 		render: (rm: RenderManager, control: WindDirection) => {
 			rm.openStart("div", control);
