@@ -1,0 +1,2 @@
+"use strict";window.suite=function(){var t;const n=new parent.jsUnitTestSuite;const e=(t=location.pathname.match(/(.*\/)(?:[^/]+)/))===null||t===void 0?void 0:t[1];n.addTestPage(e+"unit/unitTests.qunit.html");n.addTestPage(e+"integration/opaTests.qunit.html");return n};
+//# sourceMappingURL=testsuite.qunit.js.map

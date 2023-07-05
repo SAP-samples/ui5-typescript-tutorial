@@ -1,0 +1,2 @@
+"use strict";sap.ui.define(["sap/ui/test/opaQunit","./pages/MainPage"],function(e,n){function o(e){return e&&e.__esModule&&typeof e.default!=="undefined"?e.default:e}const t=o(n);const i=new t;QUnit.module("Sample Hello Journey");e("Should show location Heidelberg",function(){i.iStartMyUIComponent({componentConfig:{name:"com.myorg.myapp"}});i.iEnterLocationHeidelberg();i.iShouldSeeTheLocationHeidelberg();i.iTeardownMyApp()})});
+//# sourceMappingURL=HelloJourney.js.map

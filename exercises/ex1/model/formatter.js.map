@@ -1,0 +1,1 @@
+{"version":3,"file":"formatter.js","names":["sap","ui","define","__exports","formatValue","value","toUpperCase"],"sources":["formatter-dbg.js"],"mappings":"AAAA,aAEAA,IAAIC,GAAGC,OAAO,GAAI,WAChB,IAAIC,EAAY,CACdC,YAAaC,GACJA,IAAU,MAAQA,SAAe,OAAS,EAAIA,EAAMC,eAG/D,OAAOH,CACT"}
