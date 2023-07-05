@@ -24,7 +24,7 @@ export default class Main extends BaseController {
 
 		/*
 		// ALTERNATIVE to declarative event handler attaching in XMLView
-		const input = this.byId("locationInput");
+		const input = this.byId("location");
 		if (input.isA<Input>("sap.m.Input")) { // type guard (unfortunately the control class needs to be given twice)
 			input.attachChange(function(evt) { // now TS knows input is an Input
 				const location = evt.getParameter("value"); // type safety even for string-based access

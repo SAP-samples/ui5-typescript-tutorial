@@ -8,7 +8,7 @@ After completing this section, the view will have an input field for entering th
 
 1. Open the file `webapp/view/Main.view.xml` and insert an Input control before the opening `<form:SimpleForm>` tag.
 	```xml
-		<Input change=".locationChange" placeholder="Enter Location" />
+		<Input id="location" change=".locationChange" placeholder="Enter Location" />
 	```
 
 2. Inside the SimpleForm, at its beginning, enter a label and a Text for displaying the resolved location. 
@@ -66,7 +66,7 @@ After completing this section, the view will have an input field for entering th
 4. (**OPTIONAL** / alternatively) Although it makes no sense in *this* case, it sometimes is required to attach event handlers dynamically in controller code. E.g. in `onInit` one could do the following.
 
 	```ts
-			const input = this.byId("locationInput");
+			const input = this.byId("location");
 			if (input.isA<Input>("sap.m.Input")) { // type guard (unfortunately the control class needs to be given twice)
 				input.attachChange(function(evt) { // now TS knows input is an Input
 					const location = evt.getParameter("value"); // type safety even for string-based access
@@ -74,7 +74,6 @@ After completing this section, the view will have an input field for entering th
 			}
 	```
 
-	To make this work, the ID "locationInput" needs to be assigned to the Input in the XML view.
 	As TypeScript does not know the type of the control returned by `this.byId(...)`, it needs to be informed about it. This could be done with a type cast, but also with a so-called "type guard" as seen in the second line: the `isA` method of UI5 uses generics in a way that informs TypeScript that `input` is of type `Input` when the function returns `true`. The type name being checked unfortunately has to be written twice: the string parameter is used by UI5 at runtime, the generics type is used by TypeScript at development time (and is no longer present at runtime).
 
 	> :tada: **NEW**: The possibility to use `.isA(...)` as type guard has been added in March 2023 in version 1.112.

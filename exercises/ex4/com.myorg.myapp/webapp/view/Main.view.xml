@@ -11,7 +11,7 @@
 
 	<Page id="page" title="Current Weather">
 		<content>
-			<Input change=".locationChange" placeholder="Enter Location" />
+			<Input id="location" change=".locationChange" placeholder="Enter Location" />
 			<form:SimpleForm>
 				<Label text="Place" />
 				<Text text="{/placeName}" />

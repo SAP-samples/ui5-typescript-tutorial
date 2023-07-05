@@ -45,7 +45,7 @@ As the test code is not runtime relevant, we can use a more general namespace ra
 
 After completing these steps you are able to write a QUnit test for your application in TypeScript.
 
-1. In `webapp/test/unit/controller/Main.qunit.ts` modify the `QUnit.test` code to check the availability of the `locationChange` function:
+1. In `webapp/test/unit/controller/Main.qunit.ts` modify the `QUnit.test` code to check the availability of the `locationChange` function. Replace the existing `QUnit.test(...)` with:
 
 ```ts
 QUnit.test("The Main controller class has all custom methods", function (assert) {
@@ -103,7 +103,9 @@ After completing these steps you are able to write an OPA5 test for your applica
   [...]
 ```
 
-3. In `webapp/test/integration/HelloJourney.ts` replace all existing `opaTest` entries with the following one:
+3. Add the import `import Text from "sap/m/Text";` to the top of the file because otherwise TypeScript considers the `Text` in the type cast as DOM Text type.
+
+4. In `webapp/test/integration/HelloJourney.ts` replace all existing `opaTest` entries with the following one:
 
 ```ts
 opaTest("Should show location Heidelberg", function () {
@@ -124,6 +126,8 @@ opaTest("Should show location Heidelberg", function () {
 	onTheMainPage.iTeardownMyApp();
 });
 ```
+
+As result, the overall file should look [like this](com.myorg.myapp/webapp/test/integration/pages/MainPage.ts).
 
 With the journey above, the application is started and the location *Heidelberg* is entered to the location input and then verifies whether the location `Heidelberg` has been loaded properly.
 
@@ -179,7 +183,7 @@ After completing these steps you are able to write a QUnit test for your control
 import WindDirection from "com/myorg/myapp/control/WindDirection";
 ```
 
-3. Create a `QUnit.module` for the basic checks and a `QUnit.test` to validate the control properties:
+3. Below, create a `QUnit.module` for the basic checks and a `QUnit.test` to validate the control properties:
 
 ```ts
 QUnit.module("Basic Checks");
@@ -196,7 +200,7 @@ QUnit.test("Properties", function (assert) {
 
 This QUnit test above creates a new instance of the `WindDirection` field and validates whether the direction is set properly.
 
-4. After the import of the `WindDirection` field, add the following code which creates a `UIArea` into which an instance of the `WindDirection` control can be rendered into:
+4. Right after the import of the `WindDirection` field, before the `QUnit.module`, add the following code which creates a `UIArea` into which an instance of the `WindDirection` control can be rendered into:
 
 ```ts
 // prepare DOM (create a location to place the custom control into)
@@ -205,7 +209,7 @@ elem.id = "uiArea1";
 document.body.appendChild(elem);
 ```
 
-5. Add a `QUnit.test` to validate whether the `WindDirection` control is rendered correctly:
+5. At the end of the file, add another `QUnit.test` to validate whether the `WindDirection` control is rendered correctly:
 
 ```ts
 // some basic rendering checks
@@ -227,6 +231,8 @@ QUnit.test("Rendering", function (assert) {
 ```
 
 The test code aboves waits until the control has been rendered by using an event delegate. Once the control has been rendered, the test code verifies whether the `transform` style has been generated properly.
+
+As result, the file should look [like this](com.myorg.myapp/webapp/test/unit/control/WindDirection.qunit.ts).
 
 6. Add the new QUnit test `unit/control/WindDirection.qunit` to the QUnit testsuite `webapp/test/unit/unitTests.qunit.ts`:
 
