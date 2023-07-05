@@ -16,5 +16,6 @@
 			"integration/*": ["./webapp/test/integration/*"]
 		}
 	},
-	"include": ["./webapp/**/*"]
+	"include": ["./webapp/**/*"],
+	"exclude": ["./webapp/coverage/**/*"]
 }

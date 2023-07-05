@@ -4,7 +4,7 @@
 
 [Yeoman](https://yeoman.io/) generator kickstarting the development of UI5 applications using TypeScript. The generator incorporates the latest best-practices, is using the [UI5 Tooling](https://sap.github.io/ui5-tooling/) and the UI5 Tooling extensions provided by the [UI5 community](https://github.com/ui5-community/ui5-ecosystem-showcase/). It is maintained by the UI5 community and [OpenUI5](https://openui5.org)/[SAPUI5](https://ui5.sap.com) developers. This generator was build as a plug-in for the community project [Easy-UI5](https://github.com/SAP/generator-easy-ui5/) by [SAP](https://github.com/SAP/).
 
-## Usage with Easy-UI5
+## Usage with Easy UI5
 
 ```bash
 $> npm i -g yo
