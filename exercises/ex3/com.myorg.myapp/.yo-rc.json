@@ -1,0 +1,17 @@
+{
+  "generator-ui5-ts-app": {
+    "namespace": "com.myorg.myapp",
+    "framework": "OpenUI5",
+    "frameworkVersion": "1.115.1",
+    "author": "OpenUI5 Team",
+    "initrepo": false,
+    "tstypes": "@openui5/types",
+    "tstypesVersion": "1.115.1",
+    "appId": "com.myorg.myapp",
+    "appURI": "com/myorg/myapp",
+    "cdnDomain": "sdk.openui5.org",
+    "defaultTheme": "sap_horizon",
+    "gte11150": true,
+    "setupCompleted": true
+  }
+}
