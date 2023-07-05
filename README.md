@@ -18,7 +18,7 @@ The result of each exercise is a gradually extended app, starting from the empty
 - [Exercise 3 - React on User Input](exercises/ex3/) <!-- ([debug version](exercises/ex3/debug/)) -->
 - [Exercise 4 - Use Third-Party NPM Packages](exercises/ex4/) <!-- ([debug version](exercises/ex4/debug/)) -->
 - [Exercise 5 - Create and Use a Custom Control](exercises/ex5/) <!-- ([debug version](exercises/ex5/debug/)) -->
-- [Exercise 6 - Testing](exercises/ex6/) <!-- ([debug version](exercises/ex6/debug/)) -->
+- [Exercise 6 - Testing](exercises/ex6/) (and [unit tests](exercises/ex6/test/unit/unitTests.qunit.html) + [OPA integration tests](exercises/ex6/test/integration/opaTests.qunit.html)) <!-- ([debug version](exercises/ex6/debug/)) -->
 
 <!--In case the data cannot be loaded from the public API, you can see [the final stage of the application here](exercises/backup/) (using a backup copy of the data). [Here](exercises/backup/debug/) is the debuggable version.-->
 
