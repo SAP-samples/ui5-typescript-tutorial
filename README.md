@@ -13,7 +13,7 @@ These are the running app samples of the updated 2023 ui5-typescript-tutorial.
 The result of each exercise is a gradually extended app, starting from the empty template. Here you can have a look at each stage of the app after doing the respective exercise.<br>
 <!--The main link opens the partially optimized build result where TypeScript sourcemaps are not available, but there is also a "debug" version where the original TypeScript sources can be debugged.-->
 
-- [Exercise 1 - Create And Run Your Application](exercises/ex1/) <!-- ([debug version](exercises/ex1/debug/)) -->
+- [Exercise 1 - Create And Run Your Application](exercises/ex1/) (and the [test coverage report](exercises/ex1/coverage/report-html/index.html)) <!-- ([debug version](exercises/ex1/debug/)) -->
 - [Exercise 2 - Create the Initial User Interface and Load Data](exercises/ex2/) <!-- ([debug version](exercises/ex2/debug/)) -->
 - [Exercise 3 - React on User Input](exercises/ex3/) <!-- ([debug version](exercises/ex3/debug/)) -->
 - [Exercise 4 - Use Third-Party NPM Packages](exercises/ex4/) <!-- ([debug version](exercises/ex4/debug/)) -->
