@@ -105,6 +105,8 @@ After completing these steps you are able to write an OPA5 test for your applica
 
 3. Add the import `import Text from "sap/m/Text";` to the top of the file because otherwise TypeScript considers the `Text` in the type cast as DOM Text type.
 
+As result, the overall `MainPage.ts` file should look [like this](com.myorg.myapp/webapp/test/integration/pages/MainPage.ts).
+
 4. In `webapp/test/integration/HelloJourney.ts` replace all existing `opaTest` entries with the following one:
 
 ```ts
@@ -126,8 +128,6 @@ opaTest("Should show location Heidelberg", function () {
 	onTheMainPage.iTeardownMyApp();
 });
 ```
-
-As result, the overall file should look [like this](com.myorg.myapp/webapp/test/integration/pages/MainPage.ts).
 
 With the journey above, the application is started and the location *Heidelberg* is entered to the location input and then verifies whether the location `Heidelberg` has been loaded properly.
 
