@@ -22,6 +22,8 @@ Significant changes/improvements regarding UI5's TypeScript support since the su
 
 The developed app simply displays the current weather for the location entered by the user. To do so, it uses the free weather service [Open Meteo](https://open-meteo.com) and [OpenStreetMap's "Nominatim" geolocation service](https://nominatim.openstreetmap.org/ui/about.html).
 
+[These slides](https://sap-samples.github.io/ui5-typescript-tutorial/resources/2023-07-06_UI5con-TypeScript-Workshop.pdf) were used at UI5con 2023 to give a short intro on TypeScript and the UI5 setup for using it.
+
 ## Requirements
 
 ### Technical Requirements
