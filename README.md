@@ -2,7 +2,7 @@
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/ui5-typescript-tutorial)](https://api.reuse.software/info/github.com/SAP-samples/ui5-typescript-tutorial)
 
-Updated 2023 tutorial for writing UI5 apps in TypeScript. A 100-minute video walkthrough of this tutorial can be fount on [YouTube](https://www.youtube.com/watch?v=CRKNIiXZN6U).
+Updated 2023 tutorial for writing UI5 apps in TypeScript. A 100-minute video walkthrough of this tutorial can be found on [YouTube](https://www.youtube.com/watch?v=CRKNIiXZN6U).
 
 ## Overview
 
