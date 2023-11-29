@@ -1,6 +1,6 @@
 # Exercise 0 - Get Prepared
 
-To get started, you need to ensure that you have a recent [Node.js](https://nodejs.org/de/download) version (recommended: 18.x or higher) installed on your machine.
+To get started, you need to ensure that you have a recent [Node.js](https://nodejs.org/de/download) version (recommended: 18.x or 20.x) installed on your machine.
 
 ## Install Yeoman And Easy UI5
 
@@ -24,7 +24,8 @@ To verify the version of the installed generator-easy-ui5 you can run the follow
 npm info generator-easy-ui5 version
 ```
 
-> :warning: **Remark:** The version must be at least **```3.6.2```** to be able to consume the latest template from this repository available [here](https://github.com/SAP-samples/ui5-typescript-tutorial/tree/main/generator)!
+> :warning: **Remark:** The version must be at least **```3.6.2```** to be able to consume the latest template from this repository available [here](https://github.com/SAP-samples/ui5-typescript-tutorial/tree/main/generator)!<br>
+> When using Node.js 21.x or higher, you need at least version 3.7.0 of the Easy UI5 Generator.<br>
 > For the tutorial we used the Easy UI5 Generator 3.6.2. You can also explicitly install this version via `npm install -g generator-easy-ui5@3.6.2`.
 
 ## Summary

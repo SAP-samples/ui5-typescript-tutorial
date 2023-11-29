@@ -28,7 +28,7 @@ The developed app simply displays the current weather for the location entered b
 
 ### Technical Requirements
 
-* A current version of [Node.js](https://nodejs.org/) (preferably 18.x)
+* A current version of [Node.js](https://nodejs.org/) (preferably 18.x or 20.x)
 * A code editor supporting TypeScript development (preferably the free [Microsoft Visual Studio Code](https://code.visualstudio.com/), as it was used to create the tutorial)
 
 ### Required Knowledge
