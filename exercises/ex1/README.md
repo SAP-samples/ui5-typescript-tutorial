@@ -17,7 +17,7 @@ Now Yeoman will ask you several questions necessary to create your application. 
 ```sh
 ? Enter your application id (namespace)? com.myorg.myapp
 ? Which framework do you want to use? OpenUI5
-? Which framework version do you want to use? 1.115.1
+? Which framework version do you want to use? 1.131.1
 ? Who is the author of the application? <Your Name>
 ? Would you like to create a new directory for the application? Yes
 ? Would you like to initialize a local git repository for the application? Yes

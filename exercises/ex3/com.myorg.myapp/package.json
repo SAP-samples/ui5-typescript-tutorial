@@ -23,7 +23,7 @@
 		"@openui5/types": "1.115.1",
 		"@typescript-eslint/eslint-plugin": "^5.61.0",
 		"@typescript-eslint/parser": "^5.61.0",
-		"@ui5/cli": "^3.3.1",
+		"@ui5/cli": "^4.0.11",
 		"eslint": "^8.44.0",
 		"karma": "^6.4.2",
 		"karma-chrome-launcher": "^3.2.0",

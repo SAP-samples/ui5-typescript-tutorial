@@ -1,9 +1,25 @@
-/* eslint-disable */
-// @ts-nocheck
-window.suite = function () {
-	const suite = new parent.jsUnitTestSuite();
-	const sContextPath = location.pathname.match(/(.*\/)(?:[^/]+)/)?.[1];
-	suite.addTestPage(sContextPath + "unit/unitTests.qunit.html");
-	suite.addTestPage(sContextPath + "integration/opaTests.qunit.html");
-	return suite;
+export default {
+	name: "Unit test suite for the UI5 Application: <%= appId %>",
+	defaults: {
+		page: "ui5://test-resources/<%= appURI %>/Test.qunit.html?testsuite={suite}&test={name}",
+		qunit: {
+			version: 2
+		},
+		ui5: {
+			theme: "<%= defaultTheme %>"
+		},
+		loader: {
+			paths: {
+				"<%= appURI %>": "../"
+			}
+		}
+	},
+	tests: {
+		"unit/unitTests": {
+			title: "Unit tests for the UI5 Application: <%= appId %>"
+		},
+		"integration/opaTests": {
+			title: "Integration tests for the UI5 Application: <%= appId %>"
+		}
+	}
 };

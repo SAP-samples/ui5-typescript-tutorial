@@ -21,7 +21,7 @@ Make sure that `easy-ui5` is listed.
 To verify the version of the installed generator-easy-ui5 you can run the following command:
 
 ```sh
-npm info generator-easy-ui5 version
+npm list -g "generator-easy-ui5"
 ```
 
 > :warning: **Remark:** The version must be at least **```3.6.2```** to be able to consume the latest template from this repository available [here](https://github.com/SAP-samples/ui5-typescript-tutorial/tree/main/generator)!<br>
