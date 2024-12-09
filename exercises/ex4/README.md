@@ -28,7 +28,7 @@ Afterwards, you need to enhance the `ui5.yaml` file and add the `ui5-tooling-mod
 > Make absolutely sure the indentation is correct! It needs to be like for the previous items!
 
 ```yaml
-  specVersion: '2.0'
+  specVersion: "3.0"
   […]
   builder:
     customTasks:
