@@ -1,0 +1,105 @@
+<mvc:View
+	controllerName="keepcool.sensormanager.controller.Sensors"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:grid="sap.ui.layout.cssgrid"
+	xmlns:f="sap.f"
+	displayBlock="true">
+	<Page
+		id="sensors"
+		title="{i18n>title}">
+		<headerContent>
+			<Button
+				icon="sap-icon://menu"
+				press=".onCustomerSelect"
+				tooltip="{i18n>toolTipSelectCustomer}"/>
+		</headerContent>
+		<content>
+			<IconTabBar
+				id="iconTabBar"
+				select=".onSensorSelect"
+				class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter
+						showAll="true"
+						text="{i18n>msgFilterAll}"
+						key="All"
+						count="{=${sensorModel>/sensors}.length}"/>
+					<IconTabSeparator/>
+					<IconTabFilter
+						icon="sap-icon://fridge"
+						iconColor="Default"
+						text="{i18n>msgFilterCold}"
+						key="Cold"/>
+					<IconTabFilter
+						icon="sap-icon://blur"
+						iconColor="Critical"
+						text="{i18n>msgFilterWarm}"
+						key="Warm"/>
+					<IconTabFilter
+						icon="sap-icon://warning"
+						iconColor="Negative"
+						text="{i18n>msgFilterHot}"
+						key="Hot"/>
+				</items>
+				<content>
+					<f:GridList
+						id="sensorsList"
+						items="{
+							path: 'sensorModel>/sensors',
+							sorter: {
+								path:'customer',
+								group:true,
+								descending: false
+								}
+							}"
+						noDataText="{i18n>noSensorDataText}">
+						<f:customLayout>
+							<grid:GridBoxLayout/>
+						</f:customLayout>
+						<f:items>
+							<CustomListItem
+								type="Active"
+								press=".navToSensorStatus">
+								<layoutData>
+									<FlexItemData
+										growFactor="1"
+										shrinkFactor="0"/>
+								</layoutData>
+								<HBox justifyContent="SpaceBetween">
+									<VBox
+										justifyContent="SpaceBetween"
+										class="sapUiSmallMarginTop sapUiSmallMarginBegin">
+										<Title text="{sensorModel>location}"/>
+										<Label text="{i18n>distanceLabel}:"/>
+									</VBox>
+									<core:Icon
+										core:require="{
+											Formatter: 'keepcool/sensormanager/model/formatter'
+										}"
+										src="sap-icon://temperature"
+										color="{path: 'sensorModel>temperature', formatter:'Formatter.formatIconColor'}"
+										size="2.5rem"
+										class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+								</HBox>
+								<HBox
+									justifyContent="SpaceBetween"
+									class="sapUiTinyMarginTop sapUiSmallMarginBottom sapUiSmallMarginBeginEnd">
+									<ObjectNumber
+										number="{sensorModel>distance}"
+										unit="{i18n>distanceUnit}"/>
+								</HBox>
+							</CustomListItem>
+						</f:items>
+						<f:noData>
+							<IllustratedMessage
+								enableVerticalResponsiveness="true"
+								illustrationType="sapIllus-EmptyList"/>
+						</f:noData>
+					</f:GridList>
+				</content>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

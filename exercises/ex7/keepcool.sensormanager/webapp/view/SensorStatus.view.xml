@@ -1,0 +1,12 @@
+<mvc:View
+	controllerName="keepcool.sensormanager.controller.SensorStatus"
+	displayBlock="true"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page
+		id="SensorStatusPage"
+		title="{i18n>titleSensorStatus}"
+		showNavButton="true"
+		navButtonPress="onNavBack">
+	</Page>
+</mvc:View>

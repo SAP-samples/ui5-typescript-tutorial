@@ -1,0 +1,21 @@
+{
+  "generator-ui5-ts-app": {
+    "namespace": "keepcool.sensormanager",
+    "framework": "SAPUI5",
+    "frameworkVersion": "1.134.0",
+    "author": "Johannes Gluch",
+    "initrepo": false,
+    "tstypes": "@sapui5/types",
+    "tstypesVersion": "1.134.0",
+    "appId": "keepcool.sensormanager",
+    "appURI": "keepcool/sensormanager",
+    "cdnDomain": "ui5.sap.com",
+    "defaultTheme": "sap_horizon",
+    "gte1_98_0": true,
+    "gte1_104_0": true,
+    "gte1_115_0": true,
+    "gte1_120_0": true,
+    "lt1_124_0": false,
+    "setupCompleted": true
+  }
+}

@@ -1,0 +1,22 @@
+<mvc:View
+	controllerName="keepcool.sensormanager.controller.Sensors"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true">
+	<Page
+		id="sensors"
+		title="{i18n>appTitle}">
+		<content>
+			<IconTabBar
+				id="iconTabBar"
+				class="sapUiResponsiveContentPadding">
+				<content>
+					<IllustratedMessage
+						id="illustratedMessage"
+						enableVerticalResponsiveness="true"
+						illustrationType="sapIllus-EmptyList"/>
+				</content>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

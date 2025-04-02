@@ -1,173 +1,225 @@
-# Exercise 4 - Use Third-Party NPM Packages
+[![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](sensormanager)
 
-In this exercise, you will resolve the given location name to geographic coordinates and load weather data for those coordinates.
-Doing so, you will learn how to use front-end NPM packages in a typed manner directly from `node_modules`, thanks to the `ui5-tooling-modules` extension for the UI5 tooling. It gives you the following benefits:
+# Exercise 4 - Improve Visualization
 
-* Configuration-free consumption of project dependencies (e.g. not more than `npm i nominatim-client`)
-* Importing the dependency in the code with the NPM package name (e.g. `import * as Nominatim from "nominatim-client";`)
-* Transpiling of arbitrary module formats into UI5 AMD-like modules
+You achieved a lot in the previous exercises. Now it's time to dress up your UI5 application with some visual effects!
 
-If you are interested in the different module formats, you can find more details about the different module formats here: [CommonJS vs AMD vs RequireJS vs ES6 Modules](https://medium.com/computed-comparisons/commonjs-vs-amd-vs-requirejs-vs-es6-modules-2e814b114a0b).
 
-> :warning: **Remark:**
-> This solution may not work for all kinds of NPM packages. The NPM packages should be *frontend* packages. This means they should be capable to run in a browser environment and not rely on all the NodeJS APIs being available. Maybe in the future the rollup configuration could be even customized to allow even more. Right now it is just using a predefined set of rollup plugins to bundle the NPM packages.
+## Exercise 4.0 - Replacing Hard-Coded Text With i18n Variables
 
-## Exercise 4.1 - Install/Configure UI5 Tooling Extensions
+In your existing UI5 application you've used hard-coded text values. That's OK if you'd like to implement a fast proof of concept. In your productive application no hard-coded text should be used, however, because it would be displayed regardless of the actual browser language the user has configured. Your goal is to build an enterprise-ready application which is fully localized. UI5 comes with a huge set of localization features out of the box, one of which is automatic language selection and text localization. To benefit from it, you need to replace all occurrences of hard-coded text in your UI5 application. Luckily, there's only one occurrence! However, it's good practice to start directly with localization in mind instead of refactoring many places in your application afterwards. Replace the content within the `keepcool.sensormanager/webapp/i18n/i18n.properties` with the following values:
 
-To be able to consume NPM packages directly you need to install a [custom task](https://sap.github.io/ui5-tooling/pages/extensibility/CustomTasks/) and a [custom middleware](https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/) to your project. The custom task takes care to create a bundle for the NPM package when building your application and the custom middleware is used during development to generate the NPM package bundle on request.
+````ini
+title=Keep Cool Inc. Sensor Manager
+appTitle=Sensor Manager
+appDescription=The sensor manager
+noSensorDataText=No Sensor Data
+distanceLabel=Distance
+distanceUnit=km
+msgSensorDataLoaded=All sensors online!
+msgFilterAll=All
+msgFilterCold=Cold
+msgFilterWarm=Warm
+msgFilterHot=Too Hot
+toolTipSelectCustomer=Select Customer
+titleSelectCustomer=Select Customers
+titleSensorStatus=Sensor Status
+cardTitle=Customer: {0}
+locationLabel=Location
+cardSubTitle={0}: {1}, {2}: {3}{4}
+temperatureUnit=°C
+````
 
-First you need to install the NPM package providing both `ui5-tooling-modules` extensions as dev dependency to your project:
+These are the texts which are going to be used throughout the following exercises.
 
-```sh
-npm install ui5-tooling-modules --save-dev
+Let's do the same for the `i18n_en.properties`, which is the text localization file used for the english locale.
+
+Alongside `i18n.properties` and `i18n_en.properties`, Easy-UI5 generated a german localization file for you as well.
+
+Populate the file `keepcool.sensormanager/webapp/i18n/i18n_de.properties` with the following values:
+
+```ini
+title=Keep Cool Inc. Sensor Manager
+appTitle=Sensor Manager
+appDescription=Der Sensormanager
+noSensorDataText=Keine Sensordaten
+distanceLabel=Entfernung
+distanceUnit=km
+msgSensorDataLoaded=Alle Sensoren aktiv!
+msgFilterAll=Alle
+msgFilterCold=Kalt
+msgFilterWarm=Warm
+msgFilterHot=Zu Heiß
+toolTipSelectCustomer=Wähle Kunden
+titleSelectCustomer=Kundenauswahl
+titleSensorStatus=Sensor Status
+cardTitle=Kunde: {0}
+locationLabel=Ort
+cardSubTitle={0}: {1}, {2}: {3}{4}
+temperatureUnit=°C
 ```
 
-Afterwards, you need to enhance the `ui5.yaml` file and add the `ui5-tooling-modules-task` as the **first** custom task to the `builder` > `customTasks` section. Then, add the `ui5-tooling-modules-middleware` as the **first** custom middleware to the `server` > `customMiddleware` section. The order of the tooling extensions matters. The processing order of the tooling extensions added after a task or a middleware is reverse.
+## Exercise 4.1 - Enhance Sensors.view.xml
 
-> :warning: **Remark:**
-> Make absolutely sure the indentation is correct! It needs to be like for the previous items!
+To give the customer the best possible overview, add some color to your application. Introduce a new layout and structure for the items, and also show an `sap.ui.core.Icon` there.
 
-```yaml
-  specVersion: "3.0"
-  […]
-  builder:
-    customTasks:
-    - name: ui5-tooling-modules-task
-      afterTask: replaceVersion
-      configuration:
-        addToNamespace: true
-    […]
-  server:
-    customMiddleware:
-    - name: ui5-tooling-modules-middleware
-      afterMiddleware: compression
-    […]
-```
+1. Open `Sensors.view.xml` and add the xml namespace `xmlns:core="sap.ui.core"` to the view to have the `sap.ui.core.Icon` available.
 
-This will execute the custom task after the `replaceVersion` task and add the custom middleware after the `compression` middleware.
+	***keepcool.sensormanager/webapp/view/Sensors.view.xml***
 
-The option `addToNamespace` of the `ui5-tooling-modules-task` ensures that the used NPM package is moved into the thirdparty folder of the current projects' namespace. This option has three advantages: resources are project-local, no `resourceRoots` mapping is needed, and the NPM package is included in the preload bundle.
+	````xml
+	<mvc:View
+		controllerName="keepcool.sensormanager.controller.Sensors"
+		xmlns:core="sap.ui.core"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns="sap.m"
+		xmlns:grid="sap.ui.layout.cssgrid"
+		xmlns:f="sap.f"
+		displayBlock="true">
+	````
 
-After this step, the `ui5.yaml` should look like this: [`ui5.yaml`](com.myorg.myapp/ui5.yaml).
+2. Add a temperature icon as well as layouting to the `sap.m.CustomListItem` control. `sapUiSmallMarginTop` and `sapUiSmallMarginEnd` are predefined responsive css classes, which add screen size dependent spacing to controls. `sap.m.HBox`and `sap.m.VBox` are helpers for layouting your application.
 
-Now we are able to consume front-end NPM packages directly from `node_modules` after they have been added as project dependencies.
+	***keepcool.sensormanager/webapp/view/Sensors.view.xml***
 
-> :tada: **NEW**: previously, there was more configuration required for `ui5-tooling-modules`; this has been simplified in the first half of 2023.
+	````xml
+								<CustomListItem  type="Active">
+									<layoutData>
+										<FlexItemData
+											growFactor="1"
+											shrinkFactor="0"/>
+									</layoutData>
+									<HBox justifyContent="SpaceBetween">
+										<VBox
+											justifyContent="SpaceBetween"
+											class="sapUiSmallMarginTop sapUiSmallMarginBegin">
+											<Title text="{sensorModel>location}"/>
+											<Label text="{i18n>distanceLabel}:"/>
+										</VBox>
+										<core:Icon
+											src="sap-icon://temperature"
+											size="2.5rem"
+											class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+									</HBox>
+									<HBox
+										justifyContent="SpaceBetween"
+										class="sapUiTinyMarginTop sapUiSmallMarginBottom sapUiSmallMarginBeginEnd">
+										<ObjectNumber
+											number="{sensorModel>distance}"
+											unit="{i18n>distanceUnit}"/>
+									</HBox>
+								</CustomListItem>
+	````
 
-## Exercise 4.2 - Adding/Testing the NPM package `nominatim_client`
+Let's take a look at the application and the changes in the item layout of the `GridList` control:
+<br><br>![](images/04_01_001.png)<br><br>
 
-1. A free resolution of place names to coordinates is offered by the "Nominatim" service of [OpenStreetMap (OSM)](http://openstreetmap.org/). One of the JavaScript clients for this service is the [nominatim-client](https://www.npmjs.com/package/nominatim-client). So now install this NPM package as dev dependency. Normally dev dependencies are those only needed at development time - they are not bundled with the application. In this case, however, the bundling is done by the `ui5-tooling-modules`, so having such third-party libraries as dev dependency is sufficient.
+## Exercise 4.2 - Enhance Sensors.controller.ts
 
-	```sh
-	npm install nominatim-client --save-dev
-	```
+In this exercise you'll enhance your application with some additional controller coding by extending your existing `Sensors.controller.ts` controller.
 
-	Now you can verify whether the custom middleware works fine or not by running the development server with `npm start` (re-start it, if it was already running before the above changes!) and trying to open the nominatim-client file from [http://localhost:8080/resources/nominatim-client.js](http://localhost:8080/resources/nominatim-client.js). You should see the code of the library, nicely wrapped in a `sap.ui.define(...)` statement for a UI5-compatible module definition.
-
-	> Actually, the "Open Meteo" weather service would also allow sending a place name instead of coordinates, but we want to show how to use other libraries.
-
-2. While this works well when loading UI5 from localhost, it will fail when loading UI5 from `https://sdk.openui5.org/1.115.1/resources/sap-ui-core.js` in `index-cdn.html`: as always, UI5 resolves modules by default relatively to UI5 itself, so it tries to load Nominatim from `https://sdk.openui5.org/1.115.1/resources/nominatim-client.js`, which of course does not exist.
-
-	Therefore, in `webapp/index-cdn.html`, in addition to the application resourceRoots, add the following setting: `"nominatim-client": "resources/nominatim-client"`. As result this section should look as follows:
-
-	```
-			data-sap-ui-resourceroots='{
-				"com.myorg.myapp": "./",
-				"nominatim-client": "./resources/nominatim-client"
-			}'
-	```
-
-	Make sure to get all the quotes and commas right!
-
-	> :warning: The `resourceRoots` are only necessary in the development scenario. With the option `addToNamespace` the `resourceRoots` mapping isn't necessary anymore but as the NPM package is available under a different namespace the mapping doesn't really hurt.
-
-
-## Exercise 4.3 - Using `nominatim-client` in the Controller
-
-1. Open the file `webapp/controller/Main.controller.ts` and import all exports from `nominatim-client` by adding the following line to the list of imports at the top.
+1. Replace the `MessageBox` import with an import of the `sap.m.MessageToast`.
 
 	```ts
-	import * as Nominatim from "nominatim-client";
+	import MessageToast from "sap/m/MessageToast";
 	```
 
-	The library is now available in the controller and we can start using it. Further down, in the `locationChange` method, after getting the location from the event parameters, start typing "Nominatim." and the editor will suggest using the `createClient(...)` method.
+2. Your goal is to show an `sap.m.MessageToast` when your sensor data is loaded. Replace the `sayHello` function of `Sensors.controller.ts` with the following content. This also adds a function `getSensorModel` to retrieve the sensor model.
+Depending on the used code editor, you can also navigate to the definition of the respective UI5 API. E.g. in Visual Studio Code by holding the Ctrl key while clicking the name. This does not lead to the original source code of UI5, which is written in JavaScript, but to the TypeScript type definition files of UI5. Nevertheless it can be very helpful to browse through the methods offered by a class or to navigate further up the inheritance chain.<br>
 
-	<img src="images/nominatim_createClient.png" width="1432">
-
-	This means the type definitions for this library have automatically been found!<br>
-	It's because the `nominatim-client` comes with type definitions inside the package (in `node_modules/nominatim-client/index.d.ts`) and the `"types": "index.d.ts"` entry in its `package.json` points to them.
-
-	Other libraries might come without type definitions included, but often they are provided via Microsoft's [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) in the NPM namespace `@types`. In those cases you usually do something like `npm install @types/LIBRARYNAME --save-dev` to get the type definitions (in addition to installing the library itself). 
-
-	> :warning: **Remark:**
-	> To make TypeScript look for type definitions also in node modules (`nominatim-client` is such a module coming with its type definitions), `"moduleResolution": "node"` must be set in `tsconfig.json`. This setting is already present in the app template, so you don't need to do it for this tutorial, but keep it in mind.<br>In some cases it also may be required to modify the `"types"` setting or add a `"typeRoots"` setting in `tsconfig.json`.
-
-2. Now complete the usage of the `nominatim-client` by implementing the `locationChange` method like this:
+	***keepcool.sensormanager/webapp/controller/Sensors.controller.ts***
 
 	```ts
-		locationChange(evt: InputBase$ChangeEvent) {
-			const location = evt.getParameters().value;
-
-			Nominatim.createClient({
-				useragent: "UI5 TypeScript Tutorial App", // useragent and referrer required by the terms of use
-				referer: "https://localhost"
-			}).search({q: location}).then((results) => {
-				if (results.length > 0) {
-					return this.loadWeatherData(results[0].lat, results[0].lon, results[0].display_name); // for simplicity just use the first/best match
-				} else {
-					MessageBox.alert(`Location ${location} not found`, {
-						actions: MessageBox.Action.CLOSE // enums are now properties on the default export!
+		public onInit(): void {
+			if (this.getSensorModel().isA("sap.ui.model.json.JSONModel")) {
+				this.getSensorModel().dataLoaded().then(async () => {
+					const resourceBundle = await this.getResourceBundle();
+					MessageToast.show(resourceBundle.getText("msgSensorDataLoaded"), {
+						closeOnBrowserNavigation: false
 					});
-				}
-			}).catch(() => {
-				MessageBox.alert(`Failure while searching ${location}`, {
-					actions: MessageBox.Action.CLOSE // enums are now properties on the default export!
+				}).catch(function(oErr: Error){
+					MessageToast.show(oErr.message, {
+						closeOnBrowserNavigation: false
+					});
 				});
-			});
+			}
+		}
+
+		public getSensorModel(): JSONModel {
+			return (this.getOwnerComponent().getModel("sensorModel") as JSONModel);
 		}
 	```
 
-	The results are - as the editor shows on hovering - also nicely typed and of type `Nominatim.SearchResultItem[]`. The structure of this type can be inspected in detail in `node_modules/nominatim-client/index.d.ts`. We are interested in the resolved coordinates `lat`/`lon` and the place name belonging to them: `display_name`. As an array of such results is returned, we blindly use the first entry, which should be the most likely hit, or display a message box when the result is empty.
+Note that some of the modules are underlined in red. If you hover over the affected code, you can just implement the quickfix as suggested by BAS:
+<br><br>![](images/04_01_002.png)<br><br>
+Just click on *Quick Fix* and select *Add all missing imports*. All required dependencies have now been added to the controller.
 
-	> :tada: **NEW**: The `MessageBox.Action.CLOSE` action has been explicitly used to get the non-default "Close" button, in order to demonstrate how enums in controls are accessible in UI5 with TypeScript: they are properties of the module's default export since version 1.115.0 (June 2023).
+## Exercise 4.4 - Create your First Formatter
 
-3. The `loadWeatherData` method only took two parameters so far, now add the `placeName` as third one, defaulting to "Walldorf". For the easiest possible way to get it displayed, we simply add it to the data in the model, so the already added field in the view can pick it up as if it were part of the original weather data.
+Your next goal is to bring some color to the user interface. You'd like to display the icon in a suitable color which is based on the actual temperature of the sensor. To do this, you can use the formatter concept of UI5.
 
-	```ts
-		async loadWeatherData(lat = "49.31", lon = "8.64", placeName = "Walldorf") { // default coordinates: Walldorf
-			const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
-			const jsonData = await response.json() as WeatherInfo;
-			jsonData.placeName = placeName;
-			(this.getModel() as JSONModel).setData(jsonData); 
+1. Open `keepcool.sensormanager/webapp/model/formatter.ts`.
+
+2. Replace the `formatValue` function with the `formatIconColor`.
+
+	***keepcool.sensormanager/webapp/model/formatter.ts***
+
+	````ts
+	import { IconColor } from "sap/ui/core/library";
+
+	enum Threshold {
+		Warm = 4,
+		Hot = 5
+	}
+
+	export default {
+		formatIconColor(temperature: Threshold): IconColor|string {
+			if (temperature < Threshold.Warm) {
+				return "#0984e3";
+			} else if (temperature >= Threshold.Warm && temperature < Threshold.Hot) {
+				return IconColor.Critical;
+			} else {
+				return IconColor.Negative;
+			}
 		}
-	```
+	};
+	````
 
-	This is a bit hacky - one needs to be careful about the lifecycle of the model data and this property. On the other hand this nicely demonstrates how due to the `WeatherInfo` type, which we defined before, TypeScript now complains about accessing a property which does not exist! This also helps you when you accidentally mis-spell a property name or use uppercase instead of lowercase letters.
+You can observe that TypeScript allows to specifiy the type of the *temperature* parameter. In addition TypeScript allows us to specify a type definition for the function. In this case the *IconColor* as return type.
+Another advantage of TypeScript are enums. The theshold enum can be used to specifiy certain types of temperature status for the sensor in this example.
 
-	<img src="images/placeName_error.png" width="957">
+## Exercise 4.5 - Add the Formatter in your View
 
-	Add the `placeName` string property to the custom type to fix the error. It should then look as follows.
+You're almost done. The last piece is adding the newly created formatter function to the binding of your icon.
 
-	```ts
-		type WeatherInfo = {
-			current_weather: {
-				temperature: number,
-				windspeed: number,
-				winddirection: number
-			},
-			placeName: string
-		}
-	```
+1. Open `keepcool.sensormanager/webapp/view/Sensors.view.xml`.
 
+2. Add the `color` property to the `sap.ui.core.Icon` definition, require the formatter module, bind the `color` property to the path `sensors>temperature/value`, and assign the formatter function to the binding.
 
-Now, when entering a different location, like "Palo Alto", in the input field and pressing *Enter*, the weather data for Palo Alto is loaded and the place name "*Palo Alto, Santa Clara County, Kalifornien, Vereinigte Staaten von Amerika*" is displayed, reassuring you that the correct Palo Alto is being used.
+	***keepcool.sensormanager/webapp/view/Sensors.view.xml***
 
-![Resulting app after exercise 4](images/ex4.png)
+	````xml
+										<core:Icon
+											core:require="{
+												Formatter: 'keepcool/sensormanager/model/formatter'
+											}"
+											src="sap-icon://temperature"
+											color="{path: 'sensorModel>temperature', formatter:'Formatter.formatIconColor'}"
+											size="2.5rem"
+											class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+	````
+
+3. Let's see if your UI5 application can now color icons depending on the sensor data! Switch to the browser tab with the opened application preview and reload the page. The sensor icons should be displayed either in blue (okay), yellow (critical) or red (negative).
+<br><br>![](images/04_01_003.png)<br><br>
 
 ## Summary
 
-You've now integrated the NPM package `nominatim-client` into your UI5 TypeScript application and used it to resolve location coordinates. In this chapter you learned how you can easily add other JS libraries in a modern fashion by simply installing the NPM package and using them in your UI5 application with a simple `import` statement. The additional benefits of TypeScript often come for free for such libraries, or you just need to add the type definitions for the used JS library as additional dev dependency.
+Congratulations, you completed the [Exercise 4 - Improve Visualization](#exercise-4---improve-visualization) exercise!
 
-Furthermore, you have seen how to access enums belonging to controls and how TypeScript complains when you access a property which does not exist.
+Continue to [Exercise 5 - Filtering with the IconTabBar](../ex5/README.md).
 
-Next, display the wind information more nicely in [Exercise 5 - Create and Use a Custom Control](../ex5/README.md)
+## Further Information
+
+* Model View Controller Concept: https://ui5.sap.com/#/topic/91f233476f4d1014b6dd926db0e91070
+* Controller: https://ui5.sap.com/#/topic/121b8e6337d147af9819129e428f1f75
+* Formatting, Parsing, and Validating Data: https://ui5.sap.com/#/topic/07e4b920f5734fd78fdaa236f26236d8

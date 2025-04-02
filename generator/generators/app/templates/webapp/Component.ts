@@ -1,5 +1,5 @@
 import UIComponent from "sap/ui/core/UIComponent";
-import models from "./model/models";<% if (gte11150) { %>
+import models from "./model/models";<% if (gte1_115_0) { %>
 import Device from "sap/ui/Device";<% } else { %>
 import * as Device from "sap/ui/Device"; // for UI5 >= 1.115.0 use: import Device from "sap/ui/Device";<% } %>
 
@@ -9,6 +9,7 @@ import * as Device from "sap/ui/Device"; // for UI5 >= 1.115.0 use: import Devic
 export default class Component extends UIComponent {
 	public static metadata = {
 		manifest: "json",
+		interfaces: ["sap.ui.core.IAsyncContentCreation"]
 	};
 
 	private contentDensityClass: string;

@@ -1,35 +1,44 @@
-# Exercise 0 - Get Prepared
+# Getting Started
 
-To get started, you need to ensure that you have a recent [Node.js](https://nodejs.org/de/download) version (recommended: 18.x or 20.x) installed on your machine.
+In this exercise, you will logon to your BTP Trial Account, create a new SAP Build Code project, open SAP Business Application Studio, and get a brief overview.
 
-## Install Yeoman And Easy UI5
+## Logon
 
-Next to [Node.js](https://nodejs.org/de/download) you need to install [Yeoman](https://yeoman.io/) and the [Easy UI5 Generator](https://github.com/SAP/generator-easy-ui5). Both NPM packages will be installed globally by entering the following command in your console:
+After completing these steps you will know how to open SAP Business Application Studio and prepare it for development.
 
-```sh
-npm install -g yo generator-easy-ui5
-```
+1. Open a browser of your choice (Google Chrome, Microsoft Edge, Apple Safari, etc).
 
-Please verify your installation to see if Yeoman has been installed correctly and the Easy UI5 Generator is available by executing the following command in your console:
+2. Open [SAP BTP Trial](https://account.hanatrial.ondemand.com/trial/#/home/trial), login with your credentials and go to your trial account. If the login doesn't work, make sure you fulfill the [requirements](../../../README.md#requirements).
+<br><br>![](images/00_01_001.png)
 
-```sh
-yo --generators
-```
+3. Navigate to your "trial" subaccount.
+<br><br>![](images/00_01_002.png)
 
-Make sure that `easy-ui5` is listed.
+4. Navigate to the Service Marketplace, select the SAP Build Code tile, and press the "Go to Application" button.
+<br><br>![](images/00_01_003.png)
+<br><br>![](images/00_01_004.png)
 
-To verify the version of the installed generator-easy-ui5 you can run the following command:
+6. Press the "Create" button and select the "Create" option.
+<br><br>![](images/00_01_005.png)
 
-```sh
-npm list -g "generator-easy-ui5"
-```
+7. Select "Build an Application", then select "SAP Build Code", and finally select "SAP Fiori Application".
+<br><br>![](images/00_01_006.png)
+<br><br>![](images/00_01_007.png)
+<br><br>![](images/00_01_008.png)
 
-> :warning: **Remark:** The version must be at least **```3.6.2```** to be able to consume the latest template from this repository available [here](https://github.com/SAP-samples/ui5-typescript-tutorial/tree/main/generator)!<br>
-> When using Node.js 21.x or higher, you need at least version 3.7.0 of the Easy UI5 Generator.<br>
-> For the tutorial we used the Easy UI5 Generator 3.6.2. You can also explicitly install this version via `npm install -g generator-easy-ui5@3.6.2`.
+8. Enter the new name of your project, e.g. *DSAG_2025* as project name and create the SAP Fiori project.
+<br><br>![](images/00_01_009.png)
+
+9. Your project alongside the dev space is being prepared and starts up. This might take a few minutes. Wait until the status shows *RUNNING*.
+<br><br>![](images/00_01_010.png)
+
+10. Click on your project name, e.g. *DSAG_2025*, this will open your newly created  project space inside of SAP Business Application Studio.
+<br><br>![](images/00_01_011.png)
+
+11. Bookmark this URL, so it'll be easier for you to access your dev space within SAP Business Application Studio.
 
 ## Summary
 
-Now that you have prepared your computer you can go ahead and create your first UI5 TypeScript application.
+Congratulations, you completed the [Getting Started](#getting-started) exercise!
 
-Continue to - [Exercise 1 - Create And Run Your Application](../ex1/README.md)
+Continue to [Exercise 1 - Project Setup Using Easy-UI5](../ex1/README.md).

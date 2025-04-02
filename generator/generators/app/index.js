@@ -9,11 +9,16 @@ import { glob } from "glob";
 import packageJson from "package-json";
 import semver from "semver";
 import upath from "upath";
+import path from "path";
 
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
+const webappTestDir = path.normalize("webapp/test/");
+const webappTestDir_lt1_124 = path.normalize("webapp/test-lt1_124/");
+
 export default class extends Generator {
 	static displayName = "Create a new UI5 application with TypeScript";
+	static nestedGenerators = ["wdi5"]; // add wdi5 support
 
 	constructor(args, opts) {
 		super(args, opts, {
@@ -49,11 +54,11 @@ export default class extends Generator {
 				name: "namespace",
 				message: "Enter your application id (namespace)?",
 				validate: (s) => {
-					if (/^[a-zA-Z0-9][a-zA-Z0-9_.]*$/g.test(s)) {
+					if (/^[a-z0-9][a-z0-9_.]*$/g.test(s)) {
 						return true;
 					}
 
-					return "Please use alpha numeric characters and dots only for the namespace.";
+					return "Please use lowercase alpha numeric characters and dots only for the namespace.";
 				},
 				default: "com.myorg.myapp"
 			},
@@ -138,7 +143,11 @@ export default class extends Generator {
 			}
 
 			// more relevant parameters
-			this.config.set("gte11150", semver.gte(props.frameworkVersion, "1.115.0"));
+			this.config.set("gte1_98_0", semver.gte(props.frameworkVersion, "1.98.0"));
+			this.config.set("gte1_104_0", semver.gte(props.frameworkVersion, "1.104.0"));
+			this.config.set("gte1_115_0", semver.gte(props.frameworkVersion, "1.115.0"));
+			this.config.set("gte1_120_0", semver.gte(props.frameworkVersion, "1.120.0"));
+			this.config.set("lt1_124_0", semver.lt(props.frameworkVersion, "1.124.0"));
 		});
 	}
 
@@ -152,8 +161,21 @@ export default class extends Generator {
 				nodir: true
 			})
 			.forEach((file) => {
+				let sTargetFile = file;
+
+				// Use different "test" folder for older versions
+				if (file.startsWith(webappTestDir_lt1_124)) {
+					if (this.config.get("lt1_124_0")) {
+						sTargetFile = file.replace(webappTestDir_lt1_124, webappTestDir);
+					} else {
+						return;
+					}
+				} else if (file.startsWith(webappTestDir) && this.config.get("lt1_124_0")) {
+					return;
+				}
+
 				const sOrigin = this.templatePath(file);
-				let sTarget = this.destinationPath(file.replace(/^_/, "").replace(/\/_/, "/"));
+				let sTarget = this.destinationPath(sTargetFile.replace(/^_/, "").replace(/\/_/, "/"));
 
 				this.fs.copyTpl(sOrigin, sTarget, oConfig);
 			});

@@ -7,7 +7,26 @@
 	core:require="{
 		formatter: '<%= appURI %>/model/formatter'
 	}">
-
+<% if (gte1_98_0) { %>
+	<Page
+		title="{i18n>appTitle}"
+		id="page">
+		<content>
+			<IllustratedMessage
+				title="{i18n>appTitle}"
+				illustrationType="sapIllus-SuccessHighFive"<% if (gte1_104_0) { %>
+				enableVerticalResponsiveness="true"<% } %>
+				description="{i18n>appDescription}">
+				<additionalContent>
+					<Button
+						id="helloButton"
+						text="{formatter: 'formatter.formatValue', path: 'i18n>btnText'}"
+						press="sayHello" />
+				</additionalContent>
+			</IllustratedMessage>
+		</content>
+	</Page>
+<% } else { %>
 	<MessagePage
 		title="{i18n>appTitle}"
 		text="{i18n>appTitle}"
@@ -21,5 +40,5 @@
 				press="sayHello" />
 		</buttons>
 	</MessagePage>
-
+<% } %>
 </mvc:View>
