@@ -107,7 +107,7 @@ For this, you need to implement the filter logic.
 	````ts
 		onCustomerSelectChange(event: SelectDialog$LiveChangeEvent): void {
 			const value = event.getParameter("value");
-			const filter = new Filter("name", "Contains", value);
+			const filter = new Filter("name", FilterOperator.Contains, value);
 			const listBinding = (event.getSource() as Control).getBinding("items") as ListBinding;
 			listBinding.filter([filter]);
 		}
@@ -128,7 +128,7 @@ After providing an option to select preferred customers, you also need to add th
 			const selectedItems = event.getParameter("selectedItems");
 			const listBinding = this.getView()?.byId("sensorsList")?.getBinding("items") as ListBinding;
 			this.customFilters = selectedItems.map(function(item: StandardListItem) {
-				return new Filter("customer", "EQ", item.getTitle());
+				return new Filter("customer", FilterOperator.EQ, item.getTitle());
 			});
 			listBinding.filter(this.customFilters.concat(this.statusFilters));
 		}

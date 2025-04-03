@@ -84,11 +84,11 @@ In the previous section you've added all necessary controls. Next, you'll implem
 			const key = event.getParameter("key");
 
 			if (key === "Cold") {
-				this.statusFilters = [new Filter("temperature", "LT", Threshold.Warm, false)];
+				this.statusFilters = [new Filter("temperature", FilterOperator.LT, Threshold.Warm, false)];
 			} else if (key === "Warm") {
-				this.statusFilters = [new Filter("temperature", "BT", Threshold.Warm, Threshold.Hot)];
+				this.statusFilters = [new Filter("temperature", FilterOperator.BT, Threshold.Warm, Threshold.Hot)];
 			} else if (key === "Hot") {
-				this.statusFilters = [new Filter("temperature", "GT", Threshold.Hot, false)];
+				this.statusFilters = [new Filter("temperature", FilterOperator.GT, Threshold.Hot, false)];
 			} else {
 				this.statusFilters = [];
 			}
@@ -121,6 +121,7 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 import ListBinding from "sap/ui/model/ListBinding";
 import { IconTabBar$SelectEvent } from "sap/m/IconTabBar";
 import { Threshold } from "../model/formatter";
+import FilterOperator from "sap/ui/model/FilterOperator";
 ```
 
 ## Exercise 5.3 - Assign the Filtering to the IconTabBar

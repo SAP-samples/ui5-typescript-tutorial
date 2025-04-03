@@ -75,24 +75,9 @@ Note that this model is referencing the data source that has been created prior 
 
 After configuring the data service, it's now time to enrich your `Sensors.view.xml` with some fancy UI5 controls!
 
-1. Open the `ui5.yaml` file located under `keepcool.sensormanager/`.
+1. Open the `Sensors.view.xml` located under `keepcool.sensormanager/webapp/view/`.
 
-2. Add `sap.ui.layout` to the `framework/libraries` section.
-
-	```yaml
-	framework:
-	...
-	libraries:
-		- name: sap.ui.layout
-		- name: sap.f
-		- name: sap.m
-		- name: sap.ui.core
-		- name: themelib_sap_horizon
-	```
-
-3. Now open the `Sensors.view.xml` located under `keepcool.sensormanager/webapp/view/`.
-
-4. Add `sap.f` and `sap.ui.layout.cssgrid` to the xml namespace declarations to make sure that the required resources are available in your view.
+2. Add `sap.f` and `sap.ui.layout.cssgrid` to the xml namespace declarations to make sure that the required resources are available in your view.
 
 	***keepcool.sensormanager/webapp/view/Sensors.view.xml***
 
@@ -106,7 +91,7 @@ After configuring the data service, it's now time to enrich your `Sensors.view.x
 		displayBlock="true">
 	````
 
-5. Add `sap.f.GridList` by replacing the IllustratedMessage control in the `content` aggregation of the IconTabBar. An aggregation is a relation between two UI elements. It is used to define the parent-child relationship within the tree structure. The child end of the relation may have cardinality 0..1 or 0..*. The elements' API offers convenient and consistent methods to deal with aggregations (e.g. to get, set, or remove child elements). Examples are table rows and cells, or the content of a table cell.
+3. Add `sap.f.GridList` by replacing the IllustratedMessage control in the `content` aggregation of the IconTabBar. An aggregation is a relation between two UI elements. It is used to define the parent-child relationship within the tree structure. The child end of the relation may have cardinality 0..1 or 0..*. The elements' API offers convenient and consistent methods to deal with aggregations (e.g. to get, set, or remove child elements). Examples are table rows and cells, or the content of a table cell.
 
 	***keepcool.sensormanager/webapp/view/Sensors.view.xml***
 
@@ -129,7 +114,7 @@ After configuring the data service, it's now time to enrich your `Sensors.view.x
 					</content>
 	```
 
-6. Switch browser tabs and refresh to see the updated UI5 application.
+4. Switch browser tabs and refresh to see the updated UI5 application.
 <br><br>![](images/03_01_004.png)<br><br>
 
 ## Exercise 3.4 - Add Data Binding

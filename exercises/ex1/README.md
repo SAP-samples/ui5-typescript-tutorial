@@ -31,7 +31,7 @@ yo easy-ui5 ts-app
 ? Enter your application id (namespace)? keepcool.sensormanager
 ? Which framework do you want to use? SAPUI5
 ? Which framework version do you want to use? 1.134.0
-? Who is the author of the application? Duc Vo Ngoc
+? Who is the author of the application? <your name>
 ? Would you like to create a new directory for the application? Yes
 ? Would you like to initialize a local git repository for the application? No
 ```

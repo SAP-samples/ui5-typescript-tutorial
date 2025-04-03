@@ -147,7 +147,7 @@ You will use several UI5 libraries like `sap.m` or `sap.f` in your application. 
 			},
 	````
 
-4. Add the `sap.m` and `sap.f` dependencies to the ui5.yaml
+4. Add the `sap.m`, `sap.f` and `sap.ui.layout` dependencies to the ui5.yaml
 
 	***keepcool.sensormanager/ui5.yaml***
 
@@ -156,6 +156,7 @@ You will use several UI5 libraries like `sap.m` or `sap.f` in your application. 
 	  ...
 	  libraries:
 	    - name: sap.f
+	    - name: sap.ui.layout
 	    - name: sap.m
 	    - name: sap.ui.core
 	    - name: themelib_sap_horizon

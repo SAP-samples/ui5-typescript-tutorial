@@ -131,18 +131,16 @@ Depending on the used code editor, you can also navigate to the definition of th
 
 	```ts
 		public onInit(): void {
-			if (this.getSensorModel().isA("sap.ui.model.json.JSONModel")) {
-				this.getSensorModel().dataLoaded().then(async () => {
-					const resourceBundle = await this.getResourceBundle();
-					MessageToast.show(resourceBundle.getText("msgSensorDataLoaded"), {
-						closeOnBrowserNavigation: false
-					});
-				}).catch(function(oErr: Error){
-					MessageToast.show(oErr.message, {
-						closeOnBrowserNavigation: false
-					});
+			this.getSensorModel().dataLoaded().then(async () => {
+				const resourceBundle = await this.getResourceBundle();
+				MessageToast.show(resourceBundle.getText("msgSensorDataLoaded"), {
+					closeOnBrowserNavigation: false
 				});
-			}
+			}).catch(function(oErr: Error){
+				MessageToast.show(oErr.message, {
+					closeOnBrowserNavigation: false
+				});
+			});
 		}
 
 		public getSensorModel(): JSONModel {

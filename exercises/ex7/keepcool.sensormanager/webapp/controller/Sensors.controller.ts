@@ -5,6 +5,7 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 import ListBinding from "sap/ui/model/ListBinding";
 import { IconTabBar$SelectEvent } from "sap/m/IconTabBar";
 import { Threshold } from "../model/formatter";
+import FilterOperator from "sap/ui/model/FilterOperator";
 import SelectDialog from "sap/m/SelectDialog";
 import Control from "sap/ui/core/Control";
 import { SelectDialog$LiveChangeEvent, SelectDialog$ConfirmEvent } from "sap/m/SelectDialog";
@@ -16,18 +17,16 @@ import { ListItemBase$PressEvent } from "sap/m/ListItemBase";
  */
 export default class Sensors extends BaseController {
 	public onInit(): void {
-		if (this.getSensorModel().isA("sap.ui.model.json.JSONModel")) {
-			this.getSensorModel().dataLoaded().then(async () => {
-				const resourceBundle = await this.getResourceBundle();
-				MessageToast.show(resourceBundle.getText("msgSensorDataLoaded"), {
-					closeOnBrowserNavigation: false
-				});
-			}).catch(function(oErr: Error){
-				MessageToast.show(oErr.message, {
-					closeOnBrowserNavigation: false
-				});
+		this.getSensorModel().dataLoaded().then(async () => {
+			const resourceBundle = await this.getResourceBundle();
+			MessageToast.show(resourceBundle.getText("msgSensorDataLoaded"), {
+				closeOnBrowserNavigation: false
 			});
-		}
+		}).catch(function(oErr: Error){
+			MessageToast.show(oErr.message, {
+				closeOnBrowserNavigation: false
+			});
+		});
 	}
 
 	public getSensorModel(): JSONModel {
@@ -43,11 +42,11 @@ export default class Sensors extends BaseController {
 		const key = event.getParameter("key");
 
 		if (key === "Cold") {
-			this.statusFilters = [new Filter("temperature", "LT", Threshold.Warm, false)];
+			this.statusFilters = [new Filter("temperature", FilterOperator.LT, Threshold.Warm, false)];
 		} else if (key === "Warm") {
-			this.statusFilters = [new Filter("temperature", "BT", Threshold.Warm, Threshold.Hot)];
+			this.statusFilters = [new Filter("temperature", FilterOperator.BT, Threshold.Warm, Threshold.Hot)];
 		} else if (key === "Hot") {
-			this.statusFilters = [new Filter("temperature", "GT", Threshold.Hot, false)];
+			this.statusFilters = [new Filter("temperature", FilterOperator.GT, Threshold.Hot, false)];
 		} else {
 			this.statusFilters = [];
 		}
@@ -75,14 +74,14 @@ export default class Sensors extends BaseController {
 		const selectedItems = event.getParameter("selectedItems");
 		const listBinding = this.getView()?.byId("sensorsList")?.getBinding("items") as ListBinding;
 		this.customFilters = selectedItems.map(function(item: StandardListItem) {
-			return new Filter("customer", "EQ", item.getTitle());
+			return new Filter("customer", FilterOperator.EQ, item.getTitle());
 		});
 		listBinding.filter(this.customFilters.concat(this.statusFilters));
 	}
 
 	onCustomerSelectChange(event: SelectDialog$LiveChangeEvent): void {
 		const value = event.getParameter("value");
-		const filter = new Filter("name", "Contains", value);
+		const filter = new Filter("name", FilterOperator.Contains, value);
 		const listBinding = (event.getSource() as Control).getBinding("items") as ListBinding;
 		listBinding.filter([filter]);
 	}
