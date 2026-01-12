@@ -1,3 +1,4 @@
+import type {SuiteConfiguration} from "sap/ui/test/starter/config";
 export default {
 	name: "Unit test suite for the UI5 Application: <%= appId %>",
 	defaults: {
@@ -22,4 +23,4 @@ export default {
 			title: "Integration tests for the UI5 Application: <%= appId %>"
 		}
 	}
-};
+} satisfies SuiteConfiguration;
