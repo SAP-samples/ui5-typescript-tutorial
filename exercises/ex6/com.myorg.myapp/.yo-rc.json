@@ -2,11 +2,11 @@
   "generator-ui5-ts-app": {
     "namespace": "com.myorg.myapp",
     "framework": "OpenUI5",
-    "frameworkVersion": "1.115.1",
+    "frameworkVersion": "1.142.0",
     "author": "OpenUI5 Team",
     "initrepo": false,
     "tstypes": "@openui5/types",
-    "tstypesVersion": "1.115.1",
+    "tstypesVersion": "1.142.0",
     "appId": "com.myorg.myapp",
     "appURI": "com/myorg/myapp",
     "cdnDomain": "sdk.openui5.org",
