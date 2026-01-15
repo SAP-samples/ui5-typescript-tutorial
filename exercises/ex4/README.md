@@ -28,7 +28,7 @@ Afterwards, you need to enhance the `ui5.yaml` file and add the `ui5-tooling-mod
 > Make absolutely sure the indentation is correct! It needs to be like for the previous items!
 
 ```yaml
-  specVersion: "3.0"
+  specVersion: "4.0"
   […]
   builder:
     customTasks:
@@ -66,7 +66,7 @@ Now we are able to consume front-end NPM packages directly from `node_modules` a
 
 	> Actually, the "Open Meteo" weather service would also allow sending a place name instead of coordinates, but we want to show how to use other libraries.
 
-2. While this works well when loading UI5 from localhost, it will fail when loading UI5 from `https://sdk.openui5.org/1.115.1/resources/sap-ui-core.js` in `index-cdn.html`: as always, UI5 resolves modules by default relatively to UI5 itself, so it tries to load Nominatim from `https://sdk.openui5.org/1.115.1/resources/nominatim-client.js`, which of course does not exist.
+2. While this works well when loading UI5 from localhost, it will fail when loading UI5 from `https://sdk.openui5.org/1.142.0/resources/sap-ui-core.js` in `index-cdn.html`: as always, UI5 resolves modules by default relatively to UI5 itself, so it tries to load Nominatim from `https://sdk.openui5.org/1.142.0/resources/nominatim-client.js`, which of course does not exist.
 
 	Therefore, in `webapp/index-cdn.html`, in addition to the application resourceRoots, add the following setting: `"nominatim-client": "resources/nominatim-client"`. As result this section should look as follows:
 

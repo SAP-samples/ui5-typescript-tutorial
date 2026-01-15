@@ -1,4 +1,4 @@
-specVersion: "3.0"
+specVersion: "4.0"
 metadata:
   name: com.myorg.myapp
 type: application
@@ -8,7 +8,7 @@ resources:
       webapp: dist
 framework:
   name: OpenUI5
-  version: "1.131.1"
+  version: "1.142.0"
   libraries:
     - name: sap.m
     - name: sap.ui.core
