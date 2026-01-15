@@ -20,7 +20,7 @@
 		"test": "npm run lint && npm run karma-ci-cov"
 	},
 	"devDependencies": {
-		"@openui5/types": "^1.142.0",
+		"@openui5/types": "1.142.0",
 		"@typescript-eslint/eslint-plugin": "^5.61.0",
 		"@typescript-eslint/parser": "^5.61.0",
 		"@ui5/cli": "^4.0.11",
