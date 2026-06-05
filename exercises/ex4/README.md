@@ -142,7 +142,7 @@ Now we are able to consume front-end NPM packages directly from `node_modules` a
 		}
 	```
 
-	This is a bit hacky - one needs to be careful about the lifecycle of the model data and this property. On the other hand this nicely demonstrates how due to the `WeatherInfo` type, which we defined before, TypeScript now complains about accessing a property which does not exist! This also helps you when you accidentally mis-spell a property name or use uppercase instead of lowercase letters.
+	This is a bit hacky - one needs to be careful about the lifecycle of the model data and this property. On the other hand this nicely demonstrates how due to the `WeatherInfo` type, which we defined before, TypeScript now complains about accessing a property which does not exist! This also helps you when you accidentally misspell a property name or use uppercase instead of lowercase letters.
 
 	<img src="images/placeName_error.png" width="957">
 

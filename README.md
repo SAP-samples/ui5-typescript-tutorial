@@ -33,7 +33,7 @@ The developed app simply displays the current weather for the location entered b
 
 ### Required Knowledge
 
-* You need some Javascript knowledge to avoid blind copy&paste without knowing what's going on.
+* You need some JavaScript knowledge to avoid blind copy&paste without knowing what's going on.
 * You should have some UI5 knowledge, as this tutorial focuses on the TypeScript side of things.
 * TypeScript knowledge is *not* required. If interested, having a quick look e.g. at [this brief TypeScript intro for JavaScript developers](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html) lets you know what to expect.
 
@@ -41,7 +41,7 @@ The developed app simply displays the current weather for the location entered b
 
 The tutorial consists of the following exercises. To start, just [open the first link](exercises/ex0/) - you will be guided from there.
 
-From this list, you can not only access each exercise directly, but also also browse the resulting sources and run the resulting app:
+From this list, you can not only access each exercise directly, but also browse the resulting sources and run the resulting app:
 * [Exercise 0 - Get Prepared](exercises/ex0/)
 * [Exercise 1 - Create And Run Your Application](exercises/ex1/) (*[browse sources](exercises/ex1/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex1/)*)
 * [Exercise 2 - Create the Initial User Interface and Load Data](exercises/ex2/) (*[browse sources](exercises/ex2/com.myorg.myapp) - [run app](https://sap-samples.github.io/ui5-typescript-tutorial/exercises/ex2/)*)
