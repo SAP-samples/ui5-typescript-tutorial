@@ -50,7 +50,7 @@ After completing these steps you will have created a custom control in TypeScrip
 	}
 	```
 
-	This is an extremely simple control with just one numeric property named "direction". The renderer code is the same as it would be in pure JavaScript (actually most of the file is). It simply renders an Unicode arrow inside a `div` and applies some CSS. Most of it is static and might be separated out into a stylesheet in productive code instead of being written to the HTML of every control instance. Only the rotation value is dynamic and *has* to be written in the renderer.
+	This is an extremely simple control with just one numeric property named "direction". The renderer code is the same as it would be in pure JavaScript (actually most of the file is). It simply renders a Unicode arrow inside a `div` and applies some CSS. Most of it is static and might be separated out into a stylesheet in productive code instead of being written to the HTML of every control instance. Only the rotation value is dynamic and *has* to be written in the renderer.
 	
 	Note that the control metadata defining the properties etc. is written as a static readonly property in this class syntax.
 

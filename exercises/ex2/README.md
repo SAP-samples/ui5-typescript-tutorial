@@ -113,7 +113,7 @@ After completing this step, a model for storing weather data will be created. Th
 	But essentially it simply loads weather data for the given coordinates in JSON format and puts it into the model.
 
 	Although you have written zero type information, the TypeScript compiler uses [*type inference*](https://www.typescriptlang.org/docs/handbook/type-inference.html) to determine the type of variables where possible. So the `response` constant, for example, is fully typed, as TypeScript knows what is returned by the fetch API. If you remove the `.json()` part and re-add the dot, the editor will offer you all the properties and methods available on objects of type `Response` (this type does not need to be explicitly imported for this functionality).<br>
-	Also the method parameters are already typed based their default values.
+	Also the method parameters are already typed based on their default values.
 
 	For more information regarding the used weather API, please check https://open-meteo.com/en/docs. We are using this free API under [non-commercial terms](https://open-meteo.com/en/terms), by *"Incorporating the service into educational content"*.
 
@@ -304,7 +304,7 @@ After completing the following steps, the main view will display the current wea
 	Do the same in the file `ui5-dist.yaml` and make sure for both that the indentation is correct.
 
 
-4.  This new dependency also needs be added to the application manifest. In the file `webapp/manifest.json`, find the `sap.ui5` > `dependencies` > `libs` section and append the following entry to the list.
+4.  This new dependency also needs to be added to the application manifest. In the file `webapp/manifest.json`, find the `sap.ui5` > `dependencies` > `libs` section and append the following entry to the list.
 
 	```json
 	"sap.ui.layout": {}
@@ -328,7 +328,7 @@ Along the way, you have learned a LOT about TypeScript in UI5 apps:
 * how it helps with automatic code completion, adding imports and "Quick Fixes", which both reduce the amount of required typing
 * how it types variables via type inference even when you do not provide type information
 * that you have to provide the namespace via JSDoc for classes you define
-* how linting makes you aware of possible issues beyond the regular type chacking
+* how linting makes you aware of possible issues beyond the regular type checking
 * how you can use and define your own custom types.
 
 Continue to - [Exercise 3 - React on User Input](../ex3/README.md)

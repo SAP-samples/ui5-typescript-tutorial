@@ -20,7 +20,7 @@ webapp/test
 └── testsuite.qunit.ts        // the general testsuite
 ```
 
-The entry point of the test code is the `testsuite.qunit.html` which loads the `testsuite.qunit.ts`. Here the QUnit testsuite `unit/unitTest.qunit.ts` and the OPA5 testsuite `integration/opaTests.qunit.ts` are registered. These testsuites register all QUnit tests in the `unit/unitTest.qunit.ts` and all OPA5 tests in the `integration/opaTests.qunit.ts`.
+The entry point of the test code is the `testsuite.qunit.html` which loads the `testsuite.qunit.ts`. Here the QUnit testsuite `unit/unitTests.qunit.ts` and the OPA5 testsuite `integration/opaTests.qunit.ts` are registered. These testsuites register all QUnit tests in the `unit/unitTests.qunit.ts` and all OPA5 tests in the `integration/opaTests.qunit.ts`.
 
 To make TypeScript aware about the additional module paths for the `unit` and the `integration` test code, we need to extend the paths information of the `tsconfig.json` with the following entries:
 
@@ -53,13 +53,13 @@ QUnit.test("The Main controller class has all custom methods", function (assert)
 });
 ```
 
-2. You can also add more asserts, e.g. you want you add an assert for the availability of the `loadWeatherData` function.
+2. You can also add more asserts, e.g. you want to add an assert for the availability of the `loadWeatherData` function.
 
 Now you can validate whether the test execution works properly by starting the development server and the general test html page with the following command: `npm start -- -o test/testsuite.qunit.html`. By clicking on the field `unit/unitTests` you will reach the generic test page for unit tests. 
 
 > :tada: **NEW**: This exercise shows how you can benefit from code completion for your QUnit test code.
 
-## Excercise 6.2 - Fixing the the OPA5 journey
+## Exercise 6.2 - Fixing the OPA5 journey
 
 After completing these steps you are able to write an OPA5 test for your application in TypeScript.
 
@@ -132,7 +132,7 @@ With the journey above, the application is started and the location *Heidelberg*
 
 Now you can validate whether the test execution works properly by starting the development server and the general test html page with the following command: `npm start -- -o test/testsuite.qunit.html`. By clicking on the field `integration/opaTests` you will reach the generic test page for integration tests. 
 
-> :tada: **NEW**: This exercise shows how you can define you page object with TypeScript and benefit from code completion for your OPA5 journey using the OPA5 test code and your page object.
+> :tada: **NEW**: This exercise shows how you can define your page object with TypeScript and benefit from code completion for your OPA5 journey using the OPA5 test code and your page object.
 
 ## Exercise 6.3 - Executing the tests using Karma
 
@@ -229,7 +229,7 @@ QUnit.test("Rendering", function (assert) {
 });
 ```
 
-The test code aboves waits until the control has been rendered by using an event delegate. Once the control has been rendered, the test code verifies whether the `transform` style has been generated properly.
+The test code above waits until the control has been rendered by using an event delegate. Once the control has been rendered, the test code verifies whether the `transform` style has been generated properly.
 
 As result, the file should look [like this](com.myorg.myapp/webapp/test/unit/control/WindDirection.qunit.ts).
 
